@@ -1,0 +1,290 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block main_content %}
+    <div class="row">
+      <div class="col-md-3">
+        <!-- Profile Image -->
+        <div class="card card-primary card-outline">
+          <div class="card-body box-profile">
+            <div class="text-center">
+              <img class="profile-user-img img-fluid img-circle"
+                   src="{{ request.user.image.url }}"
+                   alt="User profile picture">
+            </div>
+
+            <h3 class="profile-username text-center">{{ request.user.first_name }} {{ request.user.last_name }}</h3>
+
+            <p class="text-muted text-center">{{ request.user.groups.all.first }} </p>
+
+            <ul class="list-group list-group-unbordered mb-3">
+              <li class="list-group-item">
+                <b>{% trans 'User name' %}</b> <a class="float-right">{{ request.user.username }}</a>
+              </li>
+              <li class="list-group-item">
+                <b>{% trans 'Enabled from' %}</b> <a class="float-right">{{ request.user.date_joined.date|date:'d b, Y' }}</a>
+              </li>
+              <li class="list-group-item">
+                <b>{% trans 'Last login' %}</b> <a class="float-right">{{ request.user.last_login.date|date:'d b, Y' }}</a>
+              </li>
+
+            </ul>
+
+{#            <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>#}
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+
+        <!-- About Me Box -->
+        <div class="card card-primary">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'About me' %}</h3>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <strong><i class="fas fa-map-marker-alt mr-1"></i> {% trans 'Address' %}</strong>
+
+            <p class="text-muted">
+                {% if request.user.address %}
+                    {{ request.user.address }}
+                {% endif %}
+            </p>
+
+            <hr>
+
+            <strong><i class="fas fa-envelope mr-1"></i> {% trans 'Email' %}</strong>
+
+            <p class="text-muted">
+                {% if request.user.email %}
+                    {{ request.user.email }}
+                {% endif %}
+            </p>
+
+            <hr>
+
+            <strong><i class="fas fa-phone mr-1"></i> {% trans 'Mobile phone' %} / {%  trans 'Landline' %}</strong>
+
+            <p class="text-muted">
+                {% if request.user.mobile_phone and request.user.landline %}
+                    {{ request.user.mobile_phone }} / {{ request.user.landline }}
+                {% elif request.user.mobile_phone %}
+                    {{ request.user.mobile_phone }}
+                {% elif request.user.landline %}
+                    {{ request.user.landline }}
+                {% endif %}
+            </p>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+      <div class="col-md-9">
+        <div class="card card-primary card-outline">
+          <form id="formItem" class="form-horizontal" method="post" role="form" enctype="multipart/form-data">
+            <div class="card-header">
+              <h3 class="card-title"><i class="fas fa-edit"></i> {% trans 'Edit profile' %}</h3>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              {% csrf_token %}
+              <div id="div-{{ form_user.id_card.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.id_card.id_for_label }}>
+                  {{ form_user.id_card.label }}
+                </label>
+              <div class="col-sm-10">
+                {{ form_user.id_card|add_error_class:"is-invalid" }}
+              </div>
+              </div>
+              <div id="div-{{ form_user.first_name.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.first_name.id_for_label }}>
+                  {{ form_user.first_name.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.first_name|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.last_name.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.last_name.id_for_label }}>
+                  {{ form_user.last_name.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.last_name|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.gender.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.gender.id_for_label }}>
+                  {{ form_user.gender.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.gender|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.username.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.username.id_for_label }}>
+                  {{ form_user.username.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.username|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              {% comment %}
+              <div id="div-{{ form_user.password1.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.password1.id_for_label }}>
+                  {{ form_user.password1.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.password1|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.password2.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.password2.id_for_label }}>
+                  {{ form_user.password2.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.password2|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              {% endcomment %}
+              <div id="div-{{ form_user.email.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.email.id_for_label }}>
+                  {{ form_user.email.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.email|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.landline.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.landline.id_for_label }}>
+                  {{ form_user.landline.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.landline|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.mobile_phone.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.mobile_phone.id_for_label }}>
+                  {{ form_user.mobile_phone.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.mobile_phone|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.address.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.address.id_for_label }}>
+                  {{ form_user.address.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.address|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+              <div id="div-{{ form_user.image.id_for_label }}" class="form-group row">
+                <label class="col-sm-2 col-form-label" for={{ form_user.image.id_for_label }}>
+                  {{ form_user.image.label }}
+                </label>
+                <div class="col-sm-10">
+                  {{ form_user.image|add_error_class:"is-invalid" }}
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <a class="btn btn-default" href="{% url 'home:index'  %}"><i class="fas fa-reply"></i>
+                  {% trans 'To return' %}
+              </a>
+              <button type="submit" class="btn btn-primary"><i class="far fa-save"></i>
+                  {% trans 'Save' %}
+              </button>
+            </div>
+            <!-- /.card-footer -->
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+{% endblock main_content %}
+
+{% block javascript %}
+
+    <script>
+
+      <!-- Save -->
+
+      $('form').on('submit', function (e) {
+        e.preventDefault();
+        Swal.fire({
+          backdrop: false,
+          title: '{{ dialogs.save_modal_question }}',
+          text: '{{ dialogs.undo_modal_warning }}',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          confirmButtonText: '{{ dialogs.confirm_modal_button }}',
+          cancelButtonText: '{{ dialogs.cancel_modal_button }}'
+        }).then((result) => {
+          if (result.value) {
+            var parameters = new FormData(this);
+            parameters.append('action', 'save');
+            if ('{{ view_url }}'.indexOf('edit') != -1) {
+                parameters.append('id', '{{ item.id }}');
+            }
+            {% comment %}
+            parametros.forEach(function (value, key) {
+                console.log(key + ': ' + value);
+            })
+            {% endcomment %}
+            // Create Ajax Call
+            $.ajax({
+              method: 'POST',
+              url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+              data: parameters,
+              dataType: 'json',
+              processData: false,
+              contentType: false,
+              success: function (data) {
+                console.log(data);
+                if (data.messages_group){
+                  show_messages(data);
+                }
+                if (data.status == 'ok'){
+                  if ('{{ view_url }}'.indexOf('edit') != -1) {
+                    window.location.assign('{{ list_url }}');
+                  }
+                  else {
+                    {#$('form#formItem').trigger("reset");#}
+                    window.location.assign('{{ list_url }}');
+                  }
+                }
+                else {
+                  for (object in data.cleaned_data) {
+                    hide_validate(object);
+                  }
+                  for (object in data.errors) {
+                    hide_validate(object);
+                    var error_code = 'unique';
+                    for (i = 0; i < data.errors[object].length; i++) {
+                      $("input#" + object).after(
+                        '<span class="help-block validacion text-sm">' + data.errors[object][i].message + '</span>'
+                      );
+                      $("select#" + object).after(
+                        '<span class="help-block validacion text-sm">' + data.errors[object][i].message + '</span>'
+                      );
+                      error_code = data.errors[object][i].code;
+                    }
+                    show_validate(object, error_code);
+                  }
+                }
+              }
+            });
+          }
+        })
+      });
+
+    </script>
+{% endblock javascript %}

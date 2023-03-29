@@ -1,0 +1,774 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  {% block title %}<title>{{ title }}</title>{% endblock title %}
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static 'plugins/fontawesome-free/css/all.min.css' %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="{% static 'plugins/Ionicons/css/ionicons.min.css' %}">
+  <!-- Bootstrap Touchspin -->
+  <link rel="stylesheet" href="{% static 'plugins/bootstrap-touchspin-4.3.0/jquery.bootstrap-touchspin.css' %}">
+  <!-- Tempusdominus Bootstrap 4 -->
+  <link rel="stylesheet" href="{% static 'plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css' %}">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="{% static 'plugins/select2/css/select2.min.css' %}">
+  <link rel="stylesheet" href="{% static 'plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css' %}">
+  <!-- JQuery UI -->
+  <link rel="stylesheet" href="{% static 'plugins/jquery-ui/jquery-ui.min.css' %}">
+  <!-- iCheck -->
+  <link rel="stylesheet" href="{% static 'plugins/icheck-bootstrap/icheck-bootstrap.min.css' %}">
+  <!-- overlayScrollbars -->
+  <link rel="stylesheet" href="{% static 'plugins/overlayScrollbars/css/OverlayScrollbars.min.css' %}">
+  <!-- Daterange picker -->
+  <link rel="stylesheet" href="{% static 'plugins/daterangepicker/daterangepicker.css' %}">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="{% static 'plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css' %}">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="{% static 'plugins/toastr/toastr.min.css' %}">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="{% static 'plugins/datatables-bs4/css/dataTables.bootstrap4.css' %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static 'dist/css/adminlte.min.css' %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+<body class="hold-transition sidebar-mini layout-fixed">
+<div class="wrapper">
+
+  <!-- Navbar -->
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
+    <!-- Left navbar links -->
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="{% url 'home:index' %}" class="nav-link">{% trans 'Home' %}</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="#" class="nav-link">{% trans 'Contact' %}</a>
+      </li>
+    </ul>
+
+    <!-- SEARCH FORM -->
+    {% block search_form %}
+      <form id="searchItem" action="" class="form-inline ml-3" hidden>
+        <div class="input-group input-group-sm">
+          <input class="form-control form-control-navbar" type="search" placeholder={% trans 'Search' %} name="search"
+                 aria-label={% trans 'Search' %} value="{{ request.POST.search }}">
+          <div class="input-group-append">
+            <button class="btn btn-navbar" type="submit">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+    {% endblock search_form %}
+
+    <!-- Right navbar links -->
+    <ul class="navbar-nav ml-auto">
+      <!-- Language Menu -->
+      {% get_current_language as LANGUAGE_CODE %}
+      {% get_available_languages as LANGUAGES %}
+      {% get_language_info_list for LANGUAGES as languages %}
+      {% for language in languages %}
+        <li class="nav-item d-none d-sm-inline-block">
+          <a href="/{{ language.code }}{{ view_url }}" class="nav-link"
+            {% if language.code == LANGUAGE_CODE %} class="selected"{%endif %}>
+            {{ language.name_local|capfirst }}
+          </a>
+        </li>
+      {% endfor %}
+      <!-- Messages Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-comments"></i>
+          <span class="badge badge-danger navbar-badge">3</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'dist/img/user1-128x128.jpg' %}" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Brad Diesel
+                  <span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">Call me whenever you can...</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'dist/img/user8-128x128.jpg' %}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  John Pierce
+                  <span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">I got your message bro</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <!-- Message Start -->
+            <div class="media">
+              <img src="{% static 'dist/img/user3-128x128.jpg' %}" alt="User Avatar" class="img-size-50 img-circle mr-3">
+              <div class="media-body">
+                <h3 class="dropdown-item-title">
+                  Nora Silvester
+                  <span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+                </h3>
+                <p class="text-sm">The subject goes here</p>
+                <p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+              </div>
+            </div>
+            <!-- Message End -->
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+        </div>
+      </li>
+      <!-- Notifications Dropdown Menu -->
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge">15</span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">15 Notifications</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> 4 new messages
+            <span class="float-right text-muted text-sm">3 mins</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-users mr-2"></i> 8 friend requests
+            <span class="float-right text-muted text-sm">12 hours</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-file mr-2"></i> 3 new reports
+            <span class="float-right text-muted text-sm">2 days</span>
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown user-menu">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+          <img src="{{ request.user.image.url }}" class="user-image img-circle elevation-2" alt="User Image">
+          <span class="d-none d-md-inline">{{ user_data.name }}</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <!-- User image -->
+          <li class="user-header bg-primary">
+            <img src="{{ request.user.image.url }}" class="img-circle elevation-2" alt="User Image">
+
+            <p>
+              {{ user_data.name }} - {{ user_data.profile }}
+              <small>{% trans 'Member since' %} {{ user_data.joined|date:"N Y" }}</small>
+            </p>
+          </li>
+          <!-- Menu Body -->
+          <li class="user-body">
+            <div class="row">
+              <div class="col-12 text-center">
+                <a href="{% url 'security:password_reset' %}"  class="btn btn-default btn-block">
+                    {% trans 'Password reset' %}
+                </a>
+              </div>
+            </div>
+            <!-- /.row -->
+          </li>
+          <!-- Menu Footer-->
+          <li class="user-footer">
+            <a href="{% url 'security:profile' %}" class="btn btn-default btn-flat">{% trans 'Profile' %}</a>
+            <a href="{% url 'security:logout' %}" class="btn btn-default btn-flat float-right">{% trans 'Log out' %}</a>
+          </li>
+        </ul>
+      </li>
+      <li class="nav-item" hidden>
+        <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+          <i class="fas fa-th-large"></i>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- /.navbar -->
+
+  <!-- Main Sidebar Container -->
+  <aside class="main-sidebar sidebar-dark-primary elevation-4">
+    <!-- Brand Logo -->
+    <a href="{% url 'home:index' %}" class="brand-link">
+      <img src="{% static 'media/logo.jpg' %}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+           style="opacity: .8">
+      <span class="brand-text font-weight-light">Stock and Services</span>
+    </a>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <img src="{{ request.user.image.url }}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">{{ user_data.name }}</a>
+        </div>
+      </div>
+
+      <!-- Sidebar Menu -->
+      <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          {% if user_data.profile in 'AdministratorCommercial' %}
+            <li class="nav-header">{% trans 'COMMERCIAL' %}</li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-list"></i>
+                <p>
+                  {% trans 'Nomenclators' %}
+                  <i class="fas fa-angle-left right"></i>
+                  <span class="badge badge-info right">12</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_supplier' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Suppliers' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_customer_category' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Customer categories' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_customer' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Customers' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_family_group' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Family groups' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_family_activity' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Familiy activities' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_family' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Families' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_measurement' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Measurements' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_product' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Products' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'commercial:list_product_conversion' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Product conversions' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_store' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Stores' %}</p>
+                  </a>
+                </li>
+                  <li class="nav-item">
+                  <a href="{% url 'accounting:list_area' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Areas' %}</p>
+                  </a>
+                </li>
+                  <li class="nav-item">
+                  <a href="{% url 'accounting:list_location' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Locations' %}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+
+          {% if user_data.profile in 'AdministratorCommercialBookkeeper' %}
+            <li class="nav-header">{% trans 'ACCOUNTING' %}</li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-calculator"></i>
+                <p>
+                  {% trans 'Transactions' %}
+                  <i class="right fas fa-angle-left"></i>
+                  <span class="badge badge-info right">8</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_purchase' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Purchases' %}</p>
+                  </a>
+                </li>
+                </li>
+                  <li class="nav-item">
+                  <a href="{% url 'accounting:list_sale' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Sales' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_sale_return' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Sales returns' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_purchase_return' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Purchase returns' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_positive_adjustment' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Positive adjustments' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_negative_adjustment' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Negative adjustments' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_positive_value_adjustment' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Positive value adjust...' %}</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="{% url 'accounting:list_negative_value_adjustment' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Negative value adjust...' %}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+
+          {% if user_data.profile in 'Administrator' %}
+            <li class="nav-header">{% trans 'SECURITY' %}</li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-filter"></i>
+                <p>
+                  {% trans 'Audit' %}
+                  <i class="right fas fa-angle-left"></i>
+                  <span class="badge badge-info right">1</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="{% url 'security:view_audit' %}" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Audit' %}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-cogs"></i>
+                <p>
+                  {% trans 'Administration' %}
+                  <i class="right fas fa-angle-left"></i>
+                  <span class="badge badge-info right">1</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                </li>
+                  <li class="nav-item">
+                  <a href="{% url 'home:index' %}admin" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Administration' %}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item has-treeview">
+              <a href="#" class="nav-link">
+                <i class="nav-icon fas fa-wrench"></i>
+                <p>
+                  {% trans 'Settings' %}
+                  <i class="right fas fa-angle-left"></i>
+                  <span class="badge badge-info right">1</span>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="far fa-circle nav-icon"></i>
+                    <p>{% trans 'Settings' %}</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          {% endif %}
+
+        </ul>
+      </nav>
+      <!-- /.sidebar-menu -->
+    </div>
+    <!-- /.sidebar -->
+  </aside>
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <div class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+            {% block main_content_header %}
+              <div class="col-sm-6">
+                <h1 class="m-0 text-dark">{{ title }}</h1>
+              </div><!-- /.col -->
+              <div class="col-sm-6">
+                <ol class="breadcrumb float-sm-right">
+                  <li class="breadcrumb-item"><a href="{% url 'home:index' %}">{% trans 'Home' %}</a></li>
+                  <li class="breadcrumb-item active"><a href="{{ list_url }}">{{ title }}</a></li>
+                </ol>
+              </div><!-- /.col -->
+            {% endblock main_content_header %}
+        </div><!-- /.row -->
+      </div><!-- /.container-fluid -->
+    </div>
+    <!-- /.content-header -->
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        {% block messages %}
+          {% for key, value in messages_group.items %}
+            {% if value.type == 'success' %}
+              <div class="alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-check"></i> <strong>{% trans 'Success!' %}</strong> <small>
+                    {{ value.title }}</small></h5>
+              </div>
+            {% endif %}
+            {% if value.type == 'info' %}
+              <div class="alert alert-info alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-info"></i> <strong>{% trans 'Information!' %}</strong> <small>
+                    {{ value.title }}</small></h5>
+              </div>
+            {% endif %}
+            {% if value.type == 'warning' %}
+              <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-exclamation-triangle"></i> <strong>{% trans 'Warning!' %}</strong> <small>
+                    {{ value.title }}</small></h5>
+              </div>
+            {% endif %}
+            {% if value.type == 'error' %}
+              <div class="alert alert-danger alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <h5><i class="icon fas fa-ban"></i> <strong>{% trans 'Error!' %}</strong> <small>
+                    {{ value.title }}</small></h5>
+              </div>
+            {% endif %}
+          {% endfor %}
+          <!-- alert-danger -->
+        {% endblock messages %}
+        {% block main_content %}
+
+        {% endblock main_content %}
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <strong>Copyright &copy; 2019-{% now "Y" %} <a href="http://adminlte.io">Stock and Services Manager System</a>.</strong>
+    All rights reserved.
+    <div class="float-right d-none d-sm-inline-block">
+      <b>Version</b> 1.1.1
+    </div>
+  </footer>
+
+  <!-- Control Sidebar -->
+  <aside class="control-sidebar control-sidebar-dark">
+    <!-- Control sidebar content goes here -->
+  </aside>
+  <!-- /.control-sidebar -->
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery -->
+<script src="{% static 'plugins/jquery/jquery.min.js' %}"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="{% static 'plugins/jquery-ui/jquery-ui.min.js' %}"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script src="{% static 'plugins/js-cookie-2.2.1/js.cookie-2.2.1.min.js' %}"></script>
+<script>
+  var csrftoken = Cookies.get('csrftoken');
+  function csrfSafeMethod(method) {
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+  }
+  $.ajaxSetup({
+    beforeSend: function(xhr, settings) {
+      if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+        xhr.setRequestHeader("X-CSRFToken", csrftoken);
+      }
+    }
+  });
+</script>
+<script>
+  $.widget.bridge('uibutton', $.ui.button)
+</script>
+<!-- Bootstrap 4 -->
+<script src="{% static 'plugins/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+<!-- Moment -->
+<script src="{% static 'plugins/moment/moment-with-locales.js' %}"></script>
+<script src="{% static 'plugins/moment/moment.min.js' %}"></script>
+<!-- daterangepicker -->
+<script src="{% static 'plugins/daterangepicker/daterangepicker.js' %}"></script>
+{% if LANGUAGE_CODE == 'es' %}
+    <script src="{% static 'plugins/daterangepicker/spanish.js' %}"></script>
+{% endif %}
+<!-- Bootstrap Touchspin -->
+<script src="{% static 'plugins/bootstrap-touchspin-4.3.0/jquery.bootstrap-touchspin.js' %}"></script>
+<!-- Tempusdominus Bootstrap 4 -->
+<script src="{% static 'plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js' %}"></script>
+<!-- Select2 -->
+<script src="{% static 'plugins/select2/js/select2.full.min.js' %}"></script>
+<script src="{% static 'plugins/select2/js/i18n/es.js' %}"></script>
+<!-- overlayScrollbars -->
+<script src="{% static 'plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js' %}"></script>
+<!-- SweetAlert2 -->
+<script src="{% static 'plugins/sweetalert2/sweetalert2.min.js' %}"></script>
+<!-- Toastr -->
+<script src="{% static 'plugins/toastr/toastr.min.js' %}"></script>
+<!-- DataTables -->
+<script src="{% static 'plugins/datatables/jquery.dataTables.js' %}"></script>
+<script src="{% static 'plugins/datatables-bs4/js/dataTables.bootstrap4.js' %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static 'dist/js/adminlte.min.js' %}"></script>
+<!-- HighCharts -->
+<script src="{% static 'plugins/highcharts-8.1.2/highcharts.js' %}"></script>
+<script src="{% static 'plugins/highcharts-8.1.2/modules/exporting.js' %}"></script>
+<script src="{% static 'plugins/highcharts-8.1.2/modules/export-data.js' %}"></script>
+<script src="{% static 'plugins/highcharts-8.1.2/modules/accessibility.js' %}"></script>
+<!-- ChartJS -->
+<script src="{% static 'plugins/chart.js/Chart.min.js' %}"></script>
+
+<!-- Javascript common functions -->
+<script src="{% static 'scripts/functions.js' %}"></script>
+
+<script>
+
+  <!-- Messages -->
+
+  $(document).ready(function() {
+    {% if messages_group %}
+      {% for message in messages_group %}
+        var wait_time = setInterval(function () {
+          clearInterval(wait_time);
+          alerta('{{ message.tags }}', '{{ message }}');
+        }, 250);
+      {% endfor %}
+    {% endif %}
+  });
+
+  <!-- Validate -->
+
+  function validate(field, type) {
+    var parameters = $('form').serializeArray();
+    parameters.push({'name': 'action', 'value': 'validate'});
+    if ('{{ view_url }}'.indexOf('edit') != -1) {
+        parameters.push({'name': 'id', 'value': '{{ item.id }}'});
+    }
+    // console.log(parameters);
+    // Create Ajax Call
+    $.ajax({
+      method: 'POST',
+      url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+      data: parameters,
+      dataType: 'json',
+      success: function (data) {
+        if (data.messages_group){
+          show_messages(data);
+        }
+        hide_validate(field);
+        for (i = 0; i < data.cleaned_data.length; i++) {
+          if (data.cleaned_data[i] == field){
+            hide_validate(data.cleaned_data[i]);
+          }
+        }
+        for (object in data.errors) {
+          if (object == field){
+            var error_code = 'unique';
+            for (i = 0; i < data.errors[field].length; i++) {
+              $("#div-" + field).append(
+                '<span class="help-block validate text-sm">' + data.errors[field][i].message + '</span>'
+              );
+              $("#div-id_" + field).append(
+                '<span class="help-block validate text-sm">' + data.errors[field][i].message + '</span>'
+              );
+              error_code = data.errors[field][i].code;
+            }
+            show_validate(field, error_code);
+            //console.log(campo + ' --> ' + codigo_error);
+          }
+        }
+      }
+    });
+  }
+
+  <!-- Save -->
+
+  function save() {
+    Swal.fire({
+      backdrop: false,
+      title: '{{ dialogs.save_modal_question }}',
+      text: '{{ dialogs.undo_modal_warning }}',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '{{ dialogs.confirm_modal_button }}',
+      cancelButtonText: '{{ dialogs.cancel_modal_button }}'
+    }).then((result) => {
+      if (result.value) {
+        var parameters = $('form').serializeArray();
+        parameters.push({'name': 'action', 'value': 'save'});
+        if ('{{ view_url }}'.indexOf('edit') != -1) {
+            parameters.push({'name': 'id', 'value': '{{ item.id }}'});
+        }
+        //console.log(parameters);
+        // Create Ajax Call
+        $.ajax({
+          method: 'POST',
+          url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+          data: parameters,
+          dataType: 'json',
+          success: function (data) {
+            if (data.messages_group){
+              show_messages(data);
+            }
+            if (data.status == 'ok'){
+              if ('{{ view_url }}'.indexOf('edit') != -1 || '{{ view_url }}'.indexOf('reset') != -1) {
+                window.location.assign('{{ list_url }}');
+              }
+              else {
+                $('form#formItem').trigger("reset");
+              }
+            }
+            else {
+              for (i = 0; i < data.cleaned_data.length; i++) {
+                hide_validate(data.cleaned_data[i]);
+              }
+              for (object in data.errors) {
+                hide_validate(object);
+                var error_code = 'unique';
+                for (i = 0; i < data.errors[object].length; i++) {
+                  $("#div-" + object).append(
+                    '<span class="help-block validate text-sm">' + data.errors[object][i].message + '</span>'
+                  );
+                  $("#div-id_" + object).append(
+                    '<span class="help-block validate text-sm">' + data.errors[object][i].message + '</span>'
+                  );
+                  error_code = data.errors[object][i].code;
+                }
+                show_validate(object, error_code);
+              }
+            }
+          }
+        });
+      }
+    })
+  }
+
+  <!-- Delete -->
+
+  function deleteItem(id) {
+    Swal.fire({
+      backdrop: false,
+      title: '{{ dialogs.delete_modal_question }}',
+      text: '{{ dialogs.undo_modal_warning }}',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: '{{ dialogs.delete_modal_button }}',
+      cancelButtonText: '{{ dialogs.cancel_modal_button }}'
+    }).then((result) => {
+      if (result.value) {
+        // Create Ajax Call
+        $.ajax({
+          method: 'POST',
+          url: '{{ delete_url }}',
+          data: {
+            'action': 'delete',
+            'id': id,
+          },
+          dataType: 'json',
+          success: function (data) {
+            if (data.messages_group){
+              show_messages(data);
+            }
+            if (data.status == 'ok'){
+              var botonId = '#delete-' + id;
+              tablaItem.row($(botonId).parents('tr')).remove().draw();
+            }
+          }
+        });
+      }
+    })
+  }
+
+</script>
+
+{% block javascript %}
+
+{% endblock javascript %}
+</body>
+</html>

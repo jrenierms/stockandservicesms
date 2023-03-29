@@ -1,0 +1,613 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block main_content %}
+    <div id="main_content_row" class="row">
+      <div id="main_content_col" class="col-12">
+        <div class="card card-outline card-primary">
+          <form id="formItem" method="post" role="form" enctype="multipart/form-data" onreset="resetSelect()">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-sm-12 col-md-7" style="margin: auto;">
+                  {% if 'create' in view_url %}
+                    <h3 class="card-title"><i class="fas fa-plus"></i> {% trans 'New sale' %}</h3>
+                  {% elif 'edit' in view_url %}
+                    <h3 class="card-title"><i class="fas fa-edit"></i> {% trans 'Edit sale' %}</h3>
+                  {% endif %}
+                </div>
+                <div class="col-sm-12 col-md-5" align="right" style="margin:auto;">
+                    {% comment %}Boton superior-derecho{% endcomment %}
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              {% csrf_token %}
+              <div class="row">
+                <div class="col-lg-3">
+                  <!-- About Me Box -->
+                  <div class="card card-secondary">
+                    <div class="card-header">
+                      <h3 class="card-title">{% trans 'Sale summary' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <div id="div-{{ form.store.id_for_label }}" class="form-group fieldWrapper">
+                        <label class="col-form-label" for={{ form.store.id_for_label }}>{{ form.store.label }}</label>
+                        {{ form.store|add_error_class:"is-invalid" }}
+                      </div>
+                      <div id="div-{{ form.area.id_for_label }}" class="form-group fieldWrapper">
+                        <label class="col-form-label" for={{ form.area.id_for_label }}>{{ form.area.label }}</label>
+                        {{ form.area|add_error_class:"is-invalid" }}
+                      </div>
+                      <div id="div-{{ form.date.id_for_label }}" class="form-group fieldWrapper">
+                        <label class="col-form-label" for={{ form.date.id_for_label }}>{{ form.date.label }}</label>
+                        {{ form.date|add_error_class:"is-invalid" }}
+                      </div>
+                      <div id="div-{{ form.customer.id_for_label }}" class="form-group fieldWrapper">
+                        <label class="col-form-label" for={{ form.customer.id_for_label }}>
+                            {{ form.customer.label }}</label>
+                        {{ form.customer|add_error_class:"is-invalid" }}
+                      </div>
+                      <div id="div-{{ form.source_document.id_for_label }}" class="form-group fieldWrapper">
+                        <label class="col-form-label" for={{ form.source_document.id_for_label }}>
+                            {{ form.source_document.label }}</label>
+                        {{ form.source_document|add_error_class:"is-invalid" }}
+                      </div>
+                      <div id="div-{{ form.comment.id_for_label }}" class="form-group fieldWrapper">
+                        <label class="col-form-label" for={{ form.comment.id_for_label }}>
+                            {{ form.comment.label }}</label>
+                        {{ form.comment|add_error_class:"is-invalid" }}
+                      </div>
+                      <div class="row">
+                        <div class="col-sm-12">
+                          <div id="div-total" class="form-group fieldWrapper">
+                            <label class="col-form-label" for="total">Total:</label>
+                            <input type="text" name="total" class="form-control" readonly="" value="0.00">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+                <div class="col-lg-9">
+                  <!-- About Me Box -->
+                  <div class="card card-secondary">
+                    <div class="card-header">
+                      <h3 class="card-title">{% trans 'Sale detail' %}</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                      <div id="div-product" class="form-group fieldWrapper">
+                        <label class="col-form-label" for="product">{% trans 'Product' %}</label>
+                        <div class="input-group">
+                            <select id="product" class="form-control select2" name="product">
+                                <option value="" selected="">---------</option>
+                            </select>
+                          <span class="input-group-append">
+                              <button type="button" class="btn btn-danger btn-flat"><i class="fas fa-times"></i></button>
+                          </span>
+                        </div>
+                      </div>
+                      <hr>
+                      <table id="itemTable" class="table table-bordered table-hover table-sm">
+                        <thead>
+                          <tr>
+                            <th style="width: 0%;">Id</th>
+                            <th style="width: 30%;">{% trans 'Product, measurement' %}</th>
+                            <th style="width: 15%;">{% trans 'Available' %}</th>
+                            <th style="width: 15%;">{% trans 'Quantity' %}</th>
+                            <th style="width: 15%;">{% trans 'Sale Price' %}</th>
+                            <th style="width: 15%;">{% trans 'Subtotal' %}</th>
+                            <th style="width: 10%;">{% trans 'Options' %}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- /.card-body -->
+                  </div>
+                  <!-- /.card -->
+                </div>
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <a class="btn btn-default" href="{{ list_url }}">
+                  <i class="fas fa-reply"></i> {% trans 'To return' %}
+              </a>
+              <button type="button" class="btn btn-primary" onclick="save_transaction()">
+                  <i class="far fa-save"></i> {% trans 'Save' %}
+              </button>
+            </div>
+            <!-- /.card-footer -->
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+{% endblock main_content %}
+
+{% block javascript %}
+<script>
+
+  var productTable;
+  var transaction = {
+    content: {
+      type: 2,
+      customer: '',
+      date: '',
+      source_document: '',
+      store: '',
+      area: '',
+      comment: '',
+      total: 0.00,
+      products: []
+    },
+    calculate_transaction: function () {
+      var subtotal = 0.00;
+      $.each(this.content.products, function (pos, dict) {
+        dict.pos = pos;
+        dict.subtotal = round((parseFloat(dict.quantity) * parseFloat(dict.price)), 2);
+        subtotal += parseFloat(dict.subtotal.toFixed(2));
+      });
+      this.content.total = subtotal;
+
+      $('input[name="total"]').val(this.content.total.toFixed(2));
+    },
+    add: function (item) {
+      this.content.products.push(item);
+      this.list();
+    },
+    list: function () {
+      this.calculate_transaction();
+      productTable = $('#itemTable').DataTable({
+        paging: true,
+        pagingType: "full_numbers",
+        lengthChange: false,
+        searching: true,
+        ordering: true,
+        info: true,
+        autoWidth: false,
+        responsive: true,
+        destroy: true,
+        data: this.content.products,
+        columns: [
+          {"data": "id", visible: false},
+          {"data": "product"},
+          {"data": "available"},
+          {"data": "quantity"},
+          {"data": "price"},
+          {"data": "subtotal"},
+          {"data": null},
+        ],
+        columnDefs: [
+          {
+            targets: [-1],
+            class: 'text-center',
+            orderable: false,
+            render: function (data, type, row) {
+              return '<div align="center" style="margin:auto;">' +
+                '<a rel="remove" id="delete-' + row.id + '" class="btn btn-danger btn-sm" ' +
+                'style="margin-right:16px; color:white;"\><i class="fas fa-trash"></i></a>' +
+                '</div>';
+            }
+          },
+          {
+            targets: [-2],
+            class: 'text-center',
+            orderable: false,
+            render: function (data, type, row) {
+              return '$' + parseFloat(data).toFixed(2);
+            }
+          },
+          {
+            targets: [-3],
+            class: 'text-center',
+            orderable: false,
+            render: function (data, type, row) {
+              return parseFloat(data).toFixed(2);
+            }
+          },
+          {
+            targets: [-4],
+            class: 'text-center',
+            orderable: false,
+            render: function (data, type, row) {
+              return '<input id="quantity" class="form-control form-control-sm input-sm" type="text" '+
+                'name="quantity" autocomplete="off" value="' + row.quantity +
+                '">';
+            }
+          },
+          {
+            targets: [-5],
+            class: 'text-center',
+            orderable: false,
+            render: function (data, type, row) {
+              return parseFloat(data).toFixed(5);
+            }
+          }
+        ],
+        rowCallback(row, data, displayNum, displayIndex, dataIndex) {
+
+            $(row).find('input[name="quantity"]').TouchSpin({
+                min: 0,
+                max: 1000000000,
+                step: 0.00001,
+                decimals: 5,
+                boostat: 5,
+                maxboostedstep: 10,
+            });
+        },
+        initComplete: function (settings, json) {
+
+        },
+        language: {
+          processing: '{{ dialogs.table_language.processing }}',
+          search: '{{ dialogs.table_language.search }}',
+          lengthMenu: '{{ dialogs.table_language.lengthMenu }}',
+          info: '{{ dialogs.table_language.info }}',
+          infoEmpty: '{{ dialogs.table_language.infoEmpty }}',
+          infoFiltered: '{{ dialogs.table_language.infoFiltered }}',
+          infoPostFix: "",
+          loadingRecords: '{{ dialogs.table_language.loadingRecords }}',
+          zeroRecords: '{{ dialogs.table_language.zeroRecords }}',
+          emptyTable: '{{ dialogs.table_language.emptyTable }}',
+          paginate: {
+            first: '{{ dialogs.table_language.paginate.first }}',
+            previous: '{{ dialogs.table_language.paginate.previous }}',
+            next: '{{ dialogs.table_language.paginate.next }}',
+            last: '{{ dialogs.table_language.paginate.last }}'
+          },
+          aria: {
+            sortAscending: '{{ dialogs.table_language.aria.sortAscending }}',
+            sortDescending: '{{ dialogs.table_language.aria.sortDescending }}'
+          }
+        }
+      });
+    },
+  };
+
+  var select_store = $('select[name="store"]');
+  var select_area = $('select[name="area"]');
+  var select_customer = $('select[name="customer"]');
+  var select_product = $('select[name="product"]');
+  var no_option = '<option value="">---------</option>';
+
+  function resetSelect() {
+      select_store.html('').html(no_option);
+      select_area.html('').html(no_option);
+      select_customer.html('').html(no_option);
+      select_product.html('').html(no_option);
+  }
+
+  $(document).ready(function() {
+
+    $('.select2').select2({
+      theme: 'bootstrap4',
+      language: '{{ LANGUAGE_CODE }}',
+    });
+    
+    //Date range picker
+    $("form#formItem #date").datetimepicker({
+      format: 'YYYY-MM-DD',
+      date: moment().format("YYYY-MM-DD"),
+      locale: '{{ LANGUAGE_CODE }}'
+    });
+
+    $('select[name="store"]').select2({
+      ajax: {
+        method: 'POST',
+        url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+          return {
+            q: params.term, // search term
+            action: 'search_store'
+          };
+        },
+        processResults: function (data, params) {
+          return {
+            results: data
+          };
+        },
+        cache: true
+      },
+      minimumInputLength: 1
+    }).on('select2:select', function (e) {
+      transaction.content.store = $('select[name="store"]').val();
+      transaction.content.area = '';
+      select_area.html('').html(no_option);
+      transaction.content.products = [];
+      transaction.list();
+    });
+
+    $('select[name="area"]').select2({
+      ajax: {
+        method: 'POST',
+        url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+          return {
+            q: params.term, // search term
+            action: 'search_area',
+            store: $('select[name="store"]').val()
+          };
+        },
+        processResults: function (data, params) {
+          return {
+            results: data
+          };
+        },
+        cache: true
+      },
+      minimumInputLength: 1
+    }).on('select2:select', function (e) {
+      transaction.content.area = $('select[name="area"]').val();
+      transaction.content.products = [];
+      transaction.list();
+    });
+
+    $('select[name="customer"]').select2({
+      ajax: {
+        method: 'POST',
+        url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+          return {
+            q: params.term, // search term
+            action: 'search_customer'
+          };
+        },
+        processResults: function (data, params) {
+          return {
+            results: data
+          };
+        },
+        cache: true
+      },
+      minimumInputLength: 1
+    }).on('select2:select', function (e) {
+      transaction.content.customer = $('select[name="customer"]').val();
+    });
+
+    $('select[name="product"]').select2({
+      ajax: {
+        method: 'POST',
+        url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+        dataType: 'json',
+        delay: 250,
+        data: function (params) {
+          return {
+            q: params.term, // search term
+            action: 'search_product',
+            area: $('select[name="area"]').val()
+          };
+        },
+        processResults: function (data, params) {
+          return {
+            results: data
+          };
+        },
+        cache: true
+      },
+      minimumInputLength: 1
+    }).on('select2:select', function (e) {
+        var data = e.params.data;
+
+        var exist = false;
+        for (i = 0; i < transaction.content.products.length; i++) {
+            if (data.primary_id == transaction.content.products[i].primary_id) {
+                exist = true;
+            }
+        }
+        if (!exist) {
+            data.quantity = 1.00000;
+            //data.price = 0.00;
+            data.subtotal = 0.00;
+            //data.location_id = '';
+            //data.location = '';
+            transaction.add(data);
+        }
+        else {
+            var messages_group = {
+                '1': {'type': 'info', 'title': '{{ message_texts.info.product_already_added }}'}
+            };
+            var data = {
+                'messages_group': messages_group
+            };
+            show_messages(data);
+        }
+
+        $(this).val('').trigger('change.select2');
+    });
+
+
+
+    // Eventos tabla Producto
+    $('#itemTable tbody')
+      .on('click', 'a[rel="remove"]', function () {
+        Swal.fire({
+          backdrop: false,
+          title: '{{ dialogs.delete_product_question }}',
+          text: '{{ dialogs.undo_modal_warning }}',
+          icon: 'question',
+          showCancelButton: true,
+          confirmButtonColor: '#d33',
+          cancelButtonColor: '#3085d6',
+          confirmButtonText: '{{ dialogs.delete_modal_button }}',
+          cancelButtonText: '{{ dialogs.cancel_modal_button }}'
+        }).then((result) => {
+          if (result.value) {
+            // Create Ajax Call
+            var tr = productTable.cell($(this).closest('td, li')).index();
+            transaction.content.products.splice(tr.row, 1);
+            transaction.list();
+          }
+        })
+      })
+      .on('change', 'input[name="quantity"]', function () {
+        var quantity = parseFloat($(this).val());
+        var tr = productTable.cell($(this).closest('td, li')).index();
+        transaction.content.products[tr.row].quantity = quantity;
+        transaction.calculate_transaction();
+        $('td:eq(4)', productTable.row(tr.row).node()).html('$' +
+            transaction.content.products[tr.row].subtotal.toFixed(2));
+      });
+
+    transaction.list();
+  })
+
+  <!-- Save -->
+
+  function save_transaction() {
+    Swal.fire({
+      backdrop: false,
+      title: '{{ dialogs.save_modal_question }}',
+      text: '{{ dialogs.undo_modal_warning }}',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: '{{ dialogs.confirm_modal_button }}',
+      cancelButtonText: '{{ dialogs.cancel_modal_button }}'
+    }).then((result) => {
+      if (result.value) {
+        transaction.content.customer = $('select[name="customer"]').val();
+        transaction.content.date = $('input[name="date"]').val();
+        transaction.content.source_document = $('input[name="source_document"]').val();
+        transaction.content.store = $('select[name="store"]').val();
+        transaction.content.area = $('select[name="area"]').val();
+        transaction.content.comment = $('textarea[name="comment"]').val();
+        if (is_detail_valid()) {
+          var parameters = new FormData();
+          parameters.append('action', 'save');
+          parameters.append('transaction_type', transaction.content.type);
+          parameters.append('customer', transaction.content.customer);
+          parameters.append('date', transaction.content.date);
+          parameters.append('source_document', transaction.content.source_document);
+          parameters.append('store', transaction.content.store);
+          parameters.append('area', transaction.content.area);
+          parameters.append('comment', transaction.content.comment);
+          parameters.append('transaction', JSON.stringify(transaction.content));
+          if ('{{ view_url }}'.indexOf('edit') != -1) {
+            parameters.append('id', '{{ item.id }}');
+          }
+        }
+        else {
+          return false;
+        }
+        // Create Ajax Call
+        $.ajax({
+          method: 'POST',
+          url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+          data: parameters,
+          dataType: 'json',
+          processData: false,
+          contentType: false,
+          success: function (data) {
+            if (data.messages_group){
+              show_messages(data);
+            }
+            if (data.status == 'ok') {
+              if ('{{ view_url }}'.indexOf('edit') != -1 || '{{ view_url }}'.indexOf('reset') != -1) {
+                window.location.assign('{{ list_url }}');
+              }
+              else {
+                window.open('{{ print_url }}' + data.transact_id + '/', '_blank')
+                if (data.value_adjustments.length > 0) {
+                  for (i = 0; i < data.value_adjustments.length; i++) {
+                    if (data.value_adjustments[i].type == 'positive') {
+                      window.open(
+                          '{{ lang_url }}' + 'print_positive_value_adjustment/' +
+                          data.value_adjustments[i].transact_id + '/', '_blank'
+                      )
+                    }
+                    if (data.value_adjustments[i].type == 'negative') {
+                      window.open(
+                          '{{ lang_url }}' + 'print_negative_value_adjustment/' +
+                          data.value_adjustments[i].transact_id + '/', '_blank'
+                      )
+                    }
+                  }
+                }
+                $('form#formItem').trigger("reset");
+                transaction.content.products = [];
+                transaction.list();
+              }
+            }
+            else {
+              for (i = 0; i < data.cleaned_data.length; i++) {
+                hide_validate(data.cleaned_data[i]);
+              }
+              for (object in data.errors) {
+                hide_validate(object);
+                var error_code = 'unique';
+                for (i = 0; i < data.errors[object].length; i++) {
+                  $("input#" + object).after(
+                    '<span class="help-block validate text-sm">' + data.errors[object][i].message + '</span>'
+                  );
+                  $("select#" + object).after(
+                    '<span class="help-block validate text-sm">' + data.errors[object][i].message + '</span>'
+                  );
+                  $("textarea#" + object).after(
+                    '<span class="help-block validate text-sm">' + data.errors[object][i].message + '</span>'
+                  );
+                  error_code = data.errors[object][i].code;
+                }
+                show_validate(object, error_code);
+              }
+            }
+          }
+        });
+      }
+    })
+  };
+
+  function is_detail_valid() {
+    var valid = true;
+    var messages_group = {
+        '1': {'type': 'error', 'title': '{{ message_texts.error.error_validation_encountered }}'}
+    };
+
+    if (transaction.content.products.length == 0) {
+      messages_group['2'] = {'type': 'info', 'title': '{{ message_texts.info.product_no_added }}'};
+      valid = false;
+    }
+    else {
+      if (transaction.content.total == 0) {
+        messages_group['2'] = {'type': 'info', 'title': '{{ message_texts.info.wrong_quantities_entered }}'};
+        valid = false;
+      }
+      else {
+        for (i = 0; i < transaction.content.products.length; i++) {
+          if (transaction.content.products[i].quantity > transaction.content.products[i].quantity_available) {
+            messages_group['2'] = {'type': 'info', 'title': '{{ message_texts.info.quantities_greater_available }}'};
+            valid = false;
+          }
+        }
+      }
+    }
+
+    if (!valid) {
+      var data = {
+        'messages_group': messages_group
+      };
+      show_messages(data);
+    }
+
+    return valid;
+  }
+
+</script>
+{% endblock javascript %}

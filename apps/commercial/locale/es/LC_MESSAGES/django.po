@@ -1,0 +1,416 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-18 14:24-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\commercial\forms.py:26 .\apps\commercial\forms.py:114
+#: .\apps\commercial\forms.py:263 .\apps\commercial\forms.py:391
+#: .\apps\commercial\forms.py:473 .\apps\commercial\forms.py:551
+#: .\apps\commercial\forms.py:681 .\apps\commercial\forms.py:759
+msgid "The code entered is contained by at least one other record"
+msgstr "El código introducido lo contiene al menos otro registro"
+
+#: .\apps\commercial\forms.py:43 .\apps\commercial\forms.py:131
+#: .\apps\commercial\forms.py:280 .\apps\commercial\forms.py:408
+#: .\apps\commercial\forms.py:490 .\apps\commercial\forms.py:568
+#: .\apps\commercial\forms.py:698 .\apps\commercial\forms.py:776
+msgid "The description entered is contained by at least one other record"
+msgstr "La descripción introducida la contiene al menos otro registro"
+
+#: .\apps\commercial\forms.py:51 .\apps\commercial\forms.py:147
+#: .\apps\commercial\forms.py:288 .\apps\commercial\forms.py:416
+#: .\apps\commercial\forms.py:498 .\apps\commercial\forms.py:592
+#: .\apps\commercial\forms.py:706 .\apps\commercial\forms.py:800
+msgid "Code:"
+msgstr "Código:"
+
+#: .\apps\commercial\forms.py:52 .\apps\commercial\forms.py:148
+#: .\apps\commercial\forms.py:289 .\apps\commercial\forms.py:417
+#: .\apps\commercial\forms.py:499 .\apps\commercial\forms.py:593
+#: .\apps\commercial\forms.py:707 .\apps\commercial\forms.py:801
+msgid "Description:"
+msgstr "Descripción:"
+
+#: .\apps\commercial\forms.py:53
+msgid "Discount:"
+msgstr "Descuento:"
+
+#: .\apps\commercial\forms.py:56 .\apps\commercial\forms.py:157
+#: .\apps\commercial\forms.py:297 .\apps\commercial\forms.py:420
+#: .\apps\commercial\forms.py:502 .\apps\commercial\forms.py:599
+#: .\apps\commercial\forms.py:710 .\apps\commercial\forms.py:807
+msgid "Enter a code of maximum length 10 characters"
+msgstr "Introduzca un código de longitud máxima 10 caracteres"
+
+#: .\apps\commercial\forms.py:57
+msgid "Enter a description of maximum length 30 characters"
+msgstr "Introduzca una descripción de longitud máxima 30 caracteres"
+
+#: .\apps\commercial\forms.py:58
+msgid "Enter a discount associated with the category"
+msgstr "Introduzca un descuento asociado a la categoría"
+
+#: .\apps\commercial\forms.py:62 .\apps\commercial\forms.py:168
+#: .\apps\commercial\forms.py:307 .\apps\commercial\forms.py:425
+#: .\apps\commercial\forms.py:507 .\apps\commercial\forms.py:607
+#: .\apps\commercial\forms.py:715 .\apps\commercial\forms.py:815
+msgid "It is required to enter a code"
+msgstr "Es requerido introducir un código"
+
+#: .\apps\commercial\forms.py:65 .\apps\commercial\forms.py:171
+#: .\apps\commercial\forms.py:310 .\apps\commercial\forms.py:428
+#: .\apps\commercial\forms.py:510 .\apps\commercial\forms.py:610
+#: .\apps\commercial\forms.py:718 .\apps\commercial\forms.py:818
+msgid "It is required to enter a description"
+msgstr "Es requerido introducir una descripción"
+
+#: .\apps\commercial\forms.py:72 .\apps\commercial\forms.py:181
+#: .\apps\commercial\forms.py:317 .\apps\commercial\forms.py:435
+#: .\apps\commercial\forms.py:517 .\apps\commercial\forms.py:623
+#: .\apps\commercial\forms.py:725 .\apps\commercial\forms.py:831
+msgid "code"
+msgstr "código"
+
+#: .\apps\commercial\forms.py:82 .\apps\commercial\forms.py:191
+#: .\apps\commercial\forms.py:327 .\apps\commercial\forms.py:445
+#: .\apps\commercial\forms.py:527 .\apps\commercial\forms.py:633
+#: .\apps\commercial\forms.py:735 .\apps\commercial\forms.py:841
+msgid "description"
+msgstr "descripción"
+
+#: .\apps\commercial\forms.py:92
+msgid "discount"
+msgstr "descuento"
+
+#: .\apps\commercial\forms.py:139 .\apps\commercial\forms.py:174
+msgid "It is required to select a category"
+msgstr "Es requerido introducir una categoría"
+
+#: .\apps\commercial\forms.py:149 .\apps\commercial\forms.py:290
+msgid "Owner:"
+msgstr "Propietario:"
+
+#: .\apps\commercial\forms.py:150 .\apps\commercial\forms.py:291
+msgid "Landline:"
+msgstr "Teléfono fijo:"
+
+#: .\apps\commercial\forms.py:151 .\apps\commercial\forms.py:292
+msgid "Mobile phone:"
+msgstr "Teléfono móvil:"
+
+#: .\apps\commercial\forms.py:152 .\apps\commercial\forms.py:293
+msgid "Email:"
+msgstr "Correo:"
+
+#: .\apps\commercial\forms.py:153 .\apps\commercial\forms.py:294
+msgid "Address:"
+msgstr "Dirección:"
+
+#: .\apps\commercial\forms.py:154
+msgid "Category:"
+msgstr "Categoría:"
+
+#: .\apps\commercial\forms.py:158 .\apps\commercial\forms.py:298
+#: .\apps\commercial\forms.py:600 .\apps\commercial\forms.py:808
+msgid "Enter a description of maximum length 150 characters"
+msgstr "Introduzca una descripción de longitud máxima 150 caracteres"
+
+#: .\apps\commercial\forms.py:159 .\apps\commercial\forms.py:299
+msgid "Enter a owner of maximum length 150 characters"
+msgstr "Introduzca un propietario de longitud máxima 150 caracteres"
+
+#: .\apps\commercial\forms.py:160 .\apps\commercial\forms.py:300
+msgid "Enter a landline of maximum length 50 characters"
+msgstr "Introduzca un teléfono fijo de longitud máxima 50 caracteres"
+
+#: .\apps\commercial\forms.py:161 .\apps\commercial\forms.py:301
+msgid "Enter a mobile phone of maximum length 50 characters"
+msgstr "Introduzca un teléfono móvil de longitud máxima 50 caracteres"
+
+#: .\apps\commercial\forms.py:162 .\apps\commercial\forms.py:302
+msgid "Enter a email of maximum length 150 characters"
+msgstr "Introduzca un correo de longitud máxima 150 caracteres"
+
+#: .\apps\commercial\forms.py:163 .\apps\commercial\forms.py:303
+msgid "Enter a address of maximum length 150 characters"
+msgstr "Introduzca una dirección de longitud máxima 150 caracteres"
+
+#: .\apps\commercial\forms.py:164
+msgid "Select an category associated with the customer"
+msgstr "Seleccione una categoría asociada al cliente"
+
+#: .\apps\commercial\forms.py:201 .\apps\commercial\forms.py:337
+msgid "owner"
+msgstr "propietario"
+
+#: .\apps\commercial\forms.py:209 .\apps\commercial\forms.py:345
+msgid "landline"
+msgstr "teléfono fijo"
+
+#: .\apps\commercial\forms.py:217 .\apps\commercial\forms.py:353
+msgid "mobile phone"
+msgstr "teléfono móvil"
+
+#: .\apps\commercial\forms.py:225 .\apps\commercial\forms.py:361
+msgid "email"
+msgstr "correo"
+
+#: .\apps\commercial\forms.py:233 .\apps\commercial\forms.py:369
+msgid "address"
+msgstr "dirección"
+
+#: .\apps\commercial\forms.py:421 .\apps\commercial\forms.py:503
+#: .\apps\commercial\forms.py:711
+msgid "Enter a description of maximum length 100 characters"
+msgstr "Introduzca una descripción de longitud máxima 100 caracteres"
+
+#: .\apps\commercial\forms.py:576 .\apps\commercial\forms.py:613
+msgid "It is required to select a group"
+msgstr "Es requerido seleccionar un grupo"
+
+#: .\apps\commercial\forms.py:584 .\apps\commercial\forms.py:616
+msgid "It is required to select an activity"
+msgstr "Es requerido seleccionar una actividad"
+
+#: .\apps\commercial\forms.py:594
+msgid "Increment:"
+msgstr "Incremento:"
+
+#: .\apps\commercial\forms.py:595
+msgid "Group:"
+msgstr "Grupo:"
+
+#: .\apps\commercial\forms.py:596
+msgid "Activity:"
+msgstr "Actividad:"
+
+#: .\apps\commercial\forms.py:601
+msgid "Enter an increment associated with the family"
+msgstr "Introduzca un incremento asociado a la familia"
+
+#: .\apps\commercial\forms.py:602
+msgid "Select a group associated with the family"
+msgstr "Seleccione un grupo asociado a la familia"
+
+#: .\apps\commercial\forms.py:603
+msgid "Select an activity associated with the family"
+msgstr "Seleccione una actividad asociada a la familia"
+
+#: .\apps\commercial\forms.py:643
+msgid "increment"
+msgstr "incremento"
+
+#: .\apps\commercial\forms.py:784 .\apps\commercial\forms.py:824
+msgid "It is required to select a family"
+msgstr "Es requerido seleccionar una familia"
+
+#: .\apps\commercial\forms.py:792 .\apps\commercial\forms.py:821
+#: .\apps\commercial\forms.py:900 .\apps\commercial\forms.py:941
+msgid "It is required to select a measurement"
+msgstr "Es requerido seleccionar una medida"
+
+#: .\apps\commercial\forms.py:802 .\apps\commercial\forms.py:926
+msgid "Measurement:"
+msgstr "Medida"
+
+#: .\apps\commercial\forms.py:803
+msgid "Sale price:"
+msgstr "Precio de venta:"
+
+#: .\apps\commercial\forms.py:804
+msgid "Family:"
+msgstr "Familia"
+
+#: .\apps\commercial\forms.py:809
+msgid "Select a measurement associated with the product"
+msgstr "Seleccione una medida asociada al producto"
+
+#: .\apps\commercial\forms.py:810
+msgid "Enter a sale_price associated with the product"
+msgstr "Introduzca un precio de venta asociado al producto"
+
+#: .\apps\commercial\forms.py:811
+msgid "Select a family associated with the product"
+msgstr "Seleccione una familia asociada al producto"
+
+#: .\apps\commercial\forms.py:859
+msgid "sale_price"
+msgstr "precio de venta"
+
+#: .\apps\commercial\forms.py:884
+msgid "The entered value cannot be zero"
+msgstr "El valor introducido no puede ser cero"
+
+#: .\apps\commercial\forms.py:892 .\apps\commercial\forms.py:935
+msgid "It is required to select a product"
+msgstr "Es requerido seleccionar un producto"
+
+#: .\apps\commercial\forms.py:916
+msgid "The measurement entered is contained by at least one other record"
+msgstr "La medida introducida la contiene al menos otro registro"
+
+#: .\apps\commercial\forms.py:924
+msgid "Product:"
+msgstr "Producto:"
+
+#: .\apps\commercial\forms.py:925
+msgid "Value:"
+msgstr "Valor:"
+
+#: .\apps\commercial\forms.py:929
+msgid "Select a product associated with the conversion"
+msgstr "Seleccione un producto asociado a la conversión"
+
+#: .\apps\commercial\forms.py:930
+msgid "Enter a value associated with the conversion"
+msgstr "Introduzca un valor asociado a la conversión"
+
+#: .\apps\commercial\forms.py:931
+msgid "Select a measurement associated with the conversion"
+msgstr "Seleccione una medida asociada a la conversión"
+
+#: .\apps\commercial\forms.py:938
+msgid "It is required to enter a value"
+msgstr "Es requerido introducir un valor"
+
+#: .\apps\commercial\forms.py:956
+msgid "value"
+msgstr "valor"
+
+#: .\apps\commercial\models.py:8 .\apps\commercial\models.py:27
+#: .\apps\commercial\models.py:50 .\apps\commercial\models.py:72
+#: .\apps\commercial\models.py:89 .\apps\commercial\models.py:108
+#: .\apps\commercial\models.py:128 .\apps\commercial\models.py:147
+msgid "Code"
+msgstr "Código"
+
+#: .\apps\commercial\models.py:9 .\apps\commercial\models.py:28
+#: .\apps\commercial\models.py:51 .\apps\commercial\models.py:73
+#: .\apps\commercial\models.py:90 .\apps\commercial\models.py:109
+#: .\apps\commercial\models.py:129 .\apps\commercial\models.py:148
+msgid "Description"
+msgstr "Descripción"
+
+#: .\apps\commercial\models.py:10
+msgid "Discount"
+msgstr "Descuento"
+
+#: .\apps\commercial\models.py:14
+msgid "Customer category"
+msgstr "Categoría del cliente"
+
+#: .\apps\commercial\models.py:15 .\apps\commercial\views.py:31
+#: .\apps\commercial\views.py:75 .\apps\commercial\views.py:134
+msgid "Customer categories"
+msgstr "Categorías de clientes"
+
+#: .\apps\commercial\models.py:29 .\apps\commercial\models.py:52
+msgid "Owner"
+msgstr "Propietario"
+
+#: .\apps\commercial\models.py:30 .\apps\commercial\models.py:53
+msgid "Landline"
+msgstr "Teléfono fijo"
+
+#: .\apps\commercial\models.py:31 .\apps\commercial\models.py:54
+msgid "Mobile phone"
+msgstr "Teléfono móvil"
+
+#: .\apps\commercial\models.py:32 .\apps\commercial\models.py:55
+msgid "Email"
+msgstr "Correo"
+
+#: .\apps\commercial\models.py:33 .\apps\commercial\models.py:56
+msgid "Address"
+msgstr "Dirección"
+
+#: .\apps\commercial\models.py:37
+msgid "Customer"
+msgstr "Cliente"
+
+#: .\apps\commercial\models.py:38 .\apps\commercial\views.py:233
+#: .\apps\commercial\views.py:280 .\apps\commercial\views.py:349
+msgid "Customers"
+msgstr "Clientes"
+
+#: .\apps\commercial\models.py:60
+msgid "Supplier"
+msgstr "Proveedor"
+
+#: .\apps\commercial\models.py:61 .\apps\commercial\views.py:457
+#: .\apps\commercial\views.py:503 .\apps\commercial\views.py:562
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#: .\apps\commercial\models.py:77
+msgid "Family group"
+msgstr "Grupo de familia"
+
+#: .\apps\commercial\models.py:78 .\apps\commercial\views.py:659
+#: .\apps\commercial\views.py:703 .\apps\commercial\views.py:762
+msgid "Family groups"
+msgstr "Grupos de familias"
+
+#: .\apps\commercial\models.py:94
+msgid "Family activity"
+msgstr "Actividad de familia"
+
+#: .\apps\commercial\models.py:95 .\apps\commercial\views.py:859
+#: .\apps\commercial\views.py:903 .\apps\commercial\views.py:962
+msgid "Family activities"
+msgstr "Actividades de familias"
+
+#: .\apps\commercial\models.py:110
+msgid "Increment"
+msgstr "Incremento"
+
+#: .\apps\commercial\models.py:114
+msgid "Family"
+msgstr "Familia"
+
+#: .\apps\commercial\models.py:115 .\apps\commercial\views.py:1059
+#: .\apps\commercial\views.py:1108 .\apps\commercial\views.py:1185
+msgid "Families"
+msgstr "Familias"
+
+#: .\apps\commercial\models.py:133
+msgid "Measurement"
+msgstr "Medida"
+
+#: .\apps\commercial\models.py:134 .\apps\commercial\views.py:1301
+#: .\apps\commercial\views.py:1345 .\apps\commercial\views.py:1404
+msgid "Measurements"
+msgstr "Medidas"
+
+#: .\apps\commercial\models.py:153
+msgid "Product"
+msgstr "Producto"
+
+#: .\apps\commercial\models.py:154 .\apps\commercial\views.py:1503
+#: .\apps\commercial\views.py:1551 .\apps\commercial\views.py:1635
+msgid "Products"
+msgstr "Productos"
+
+#: .\apps\commercial\models.py:173
+msgid "Product conversion"
+msgstr "Conversión de producto"
+
+#: .\apps\commercial\models.py:174 .\apps\commercial\views.py:1783
+#: .\apps\commercial\views.py:1831 .\apps\commercial\views.py:1908
+msgid "Product conversions"
+msgstr "Conversiones de productos"

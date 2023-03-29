@@ -1,0 +1,444 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-18 14:24-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\accounting\forms.py:24 .\apps\accounting\forms.py:106
+#: .\apps\accounting\forms.py:231
+msgid "The code entered is contained by at least one other record"
+msgstr "El código introducido lo contiene al menos otro registro"
+
+#: .\apps\accounting\forms.py:37 .\apps\accounting\forms.py:126
+#: .\apps\accounting\forms.py:251
+msgid "The description entered is contained by at least one other record"
+msgstr "La descripción introducida la contiene al menos otro registro"
+
+#: .\apps\accounting\forms.py:45 .\apps\accounting\forms.py:135
+#: .\apps\accounting\forms.py:260
+msgid "Code:"
+msgstr "Código:"
+
+#: .\apps\accounting\forms.py:46 .\apps\accounting\forms.py:136
+#: .\apps\accounting\forms.py:261
+msgid "Description:"
+msgstr "Descripción:"
+
+#: .\apps\accounting\forms.py:49 .\apps\accounting\forms.py:140
+#: .\apps\accounting\forms.py:265
+msgid "Enter a code of maximum length 10 characters"
+msgstr "Introduzca un código de longitud máxima 10 caracteres"
+
+#: .\apps\accounting\forms.py:50
+msgid "Enter a description of maximum length 30 characters"
+msgstr "Introduzca una descripción de longitud máxima 30 caracteres"
+
+#: .\apps\accounting\forms.py:54 .\apps\accounting\forms.py:148
+#: .\apps\accounting\forms.py:273
+msgid "It is required to enter a code"
+msgstr "Es requerido introducir un código"
+
+#: .\apps\accounting\forms.py:57 .\apps\accounting\forms.py:151
+#: .\apps\accounting\forms.py:276
+msgid "It is required to enter a description"
+msgstr "Es requerido introducir una descripción"
+
+#: .\apps\accounting\forms.py:64 .\apps\accounting\forms.py:166
+#: .\apps\accounting\forms.py:291
+msgid "code"
+msgstr "código"
+
+#: .\apps\accounting\forms.py:74 .\apps\accounting\forms.py:176
+#: .\apps\accounting\forms.py:301
+msgid "description"
+msgstr "descripción"
+
+#: .\apps\accounting\forms.py:93 .\apps\accounting\forms.py:145
+#: .\apps\accounting\forms.py:194 .\apps\accounting\forms.py:210
+#: .\apps\accounting\forms.py:319 .\apps\accounting\forms.py:343
+#: .\apps\accounting\forms.py:442 .\apps\accounting\forms.py:466
+#: .\apps\accounting\forms.py:785 .\apps\accounting\forms.py:801
+msgid "It is required to select a store"
+msgstr "Es requerido seleccionar una tienda"
+
+#: .\apps\accounting\forms.py:134 .\apps\accounting\forms.py:191
+#: .\apps\accounting\forms.py:316 .\apps\accounting\forms.py:439
+#: .\apps\accounting\forms.py:562 .\apps\accounting\forms.py:672
+#: .\apps\accounting\forms.py:782
+msgid "Store:"
+msgstr "Tienda:"
+
+#: .\apps\accounting\forms.py:139 .\apps\accounting\forms.py:192
+msgid "Select a store associated with the area"
+msgstr "Seleccione una tienda asociada al área"
+
+#: .\apps\accounting\forms.py:141 .\apps\accounting\forms.py:266
+msgid "Enter a description of maximum length 150 characters"
+msgstr "Introduzca una descripción de longitud máxima 150 caracteres"
+
+#: .\apps\accounting\forms.py:218 .\apps\accounting\forms.py:270
+#: .\apps\accounting\forms.py:351 .\apps\accounting\forms.py:377
+#: .\apps\accounting\forms.py:474 .\apps\accounting\forms.py:500
+#: .\apps\accounting\forms.py:809 .\apps\accounting\forms.py:830
+msgid "It is required to select an area"
+msgstr "Es requerido seleccionar un área"
+
+#: .\apps\accounting\forms.py:259 .\apps\accounting\forms.py:360
+#: .\apps\accounting\forms.py:483 .\apps\accounting\forms.py:590
+#: .\apps\accounting\forms.py:700 .\apps\accounting\forms.py:817
+msgid "Area:"
+msgstr "Área:"
+
+#: .\apps\accounting\forms.py:264
+msgid "Select a area associated with the location"
+msgstr "Seleccione un área asociada a la ubicación"
+
+#: .\apps\accounting\forms.py:317
+msgid "Select a store associated with the purchase"
+msgstr "Seleccione una tienda asociada a la compra"
+
+#: .\apps\accounting\forms.py:335 .\apps\accounting\forms.py:374
+msgid "It is required to select a supplier"
+msgstr "Es requerido seleccionar un proveedor"
+
+#: .\apps\accounting\forms.py:359 .\apps\accounting\forms.py:699
+msgid "Supplier:"
+msgstr "Proveedor:"
+
+#: .\apps\accounting\forms.py:361 .\apps\accounting\forms.py:484
+#: .\apps\accounting\forms.py:591 .\apps\accounting\forms.py:701
+#: .\apps\accounting\forms.py:818
+msgid "Date:"
+msgstr "Fecha:"
+
+#: .\apps\accounting\forms.py:362 .\apps\accounting\forms.py:485
+#: .\apps\accounting\forms.py:592 .\apps\accounting\forms.py:702
+#: .\apps\accounting\forms.py:819
+msgid "Source document:"
+msgstr "Docuemnto origen:"
+
+#: .\apps\accounting\forms.py:363 .\apps\accounting\forms.py:486
+#: .\apps\accounting\forms.py:593 .\apps\accounting\forms.py:703
+#: .\apps\accounting\forms.py:820
+msgid "Comment:"
+msgstr "Comentario:"
+
+#: .\apps\accounting\forms.py:366
+msgid "Select a supplier associated with the purchase"
+msgstr "Seleccione un proveedor asociado a la compra"
+
+#: .\apps\accounting\forms.py:367
+msgid "Select an area associated with the purchase"
+msgstr "Seleccione un área asociada a la compra"
+
+#: .\apps\accounting\forms.py:368
+msgid "Enter a date associated with the purchase"
+msgstr "Introduzca una fecha asociada a la compra"
+
+#: .\apps\accounting\forms.py:369 .\apps\accounting\forms.py:492
+#: .\apps\accounting\forms.py:599 .\apps\accounting\forms.py:709
+#: .\apps\accounting\forms.py:825
+msgid "Enter a source document of maximum length 20 characters"
+msgstr "Introduzca un documento origen de longitud máxima 20 caracteres"
+
+#: .\apps\accounting\forms.py:370
+msgid "Enter a comment associated with the purchase"
+msgstr "Introduzca un comentario asociado a la compra"
+
+#: .\apps\accounting\forms.py:380 .\apps\accounting\forms.py:503
+#: .\apps\accounting\forms.py:610 .\apps\accounting\forms.py:720
+#: .\apps\accounting\forms.py:833
+msgid "It is required to enter a date"
+msgstr "Es requerido introducir una fecha"
+
+#: .\apps\accounting\forms.py:405 .\apps\accounting\forms.py:528
+#: .\apps\accounting\forms.py:637 .\apps\accounting\forms.py:747
+#: .\apps\accounting\forms.py:850
+msgid "date with the format: yyyy-mm-dd"
+msgstr "fecha con el formato: aaaa-mm-dd"
+
+#: .\apps\accounting\forms.py:417 .\apps\accounting\forms.py:540
+#: .\apps\accounting\forms.py:649 .\apps\accounting\forms.py:759
+#: .\apps\accounting\forms.py:862
+msgid "source document"
+msgstr "documento origen"
+
+#: .\apps\accounting\forms.py:426
+msgid "comment about the purchase"
+msgstr "comentario acerca de la compra"
+
+#: .\apps\accounting\forms.py:440
+msgid "Select a store associated with the sale"
+msgstr "Seleccione una tienda asociada a la venta"
+
+#: .\apps\accounting\forms.py:458 .\apps\accounting\forms.py:497
+msgid "It is required to select a customer"
+msgstr "Es requerido seleccionar un cliente"
+
+#: .\apps\accounting\forms.py:482 .\apps\accounting\forms.py:589
+msgid "Customer:"
+msgstr "Cliente:"
+
+#: .\apps\accounting\forms.py:489
+msgid "Select a customer associated with the sale"
+msgstr "Seleccione un cliente asociado a la venta"
+
+#: .\apps\accounting\forms.py:490
+msgid "Select an area associated with the sale"
+msgstr "Seleccione un área asociada a la venta"
+
+#: .\apps\accounting\forms.py:491
+msgid "Enter a date associated with the sale"
+msgstr "Introduzca una fecha asociada a la venta"
+
+#: .\apps\accounting\forms.py:493
+msgid "Enter a comment associated with the sale"
+msgstr "Introduzca un comentario asociado a la venta"
+
+#: .\apps\accounting\forms.py:549
+msgid "comment about the sale"
+msgstr "comentario acerca de la venta"
+
+#: .\apps\accounting\forms.py:563
+msgid "Enter a store associated with the sale return"
+msgstr "Introduzca una tienda asociada a la devolución de venta"
+
+#: .\apps\accounting\forms.py:565 .\apps\accounting\forms.py:675
+msgid "It is required to enter a store"
+msgstr "Es requerido introducir una tienda"
+
+#: .\apps\accounting\forms.py:570 .\apps\accounting\forms.py:680
+msgid "store"
+msgstr "tienda"
+
+#: .\apps\accounting\forms.py:581 .\apps\accounting\forms.py:691
+msgid "It is required to enter a source document"
+msgstr "Es requerido introducir un documento origen"
+
+#: .\apps\accounting\forms.py:596
+msgid "Select a customer associated with the sale return"
+msgstr "Seleccione un cliente asociado a la devolución de venta"
+
+#: .\apps\accounting\forms.py:597
+msgid "Enter an area associated with the sale return"
+msgstr "Introduzca un área asociada a la devolución de venta"
+
+#: .\apps\accounting\forms.py:598
+msgid "Enter a date associated with the sale return"
+msgstr "Introduzca una fecha asociada a la devolución de venta"
+
+#: .\apps\accounting\forms.py:600
+msgid "Enter a comment associated with the sale return"
+msgstr "Introduzca un comentario asociado a la devolución de venta"
+
+#: .\apps\accounting\forms.py:604
+msgid "It is required to enter a customer"
+msgstr "Es requerido introducir un cliente"
+
+#: .\apps\accounting\forms.py:607 .\apps\accounting\forms.py:717
+msgid "It is required to enter an area"
+msgstr "Es requerido introducir un área"
+
+#: .\apps\accounting\forms.py:617
+msgid "customer"
+msgstr "cliente"
+
+#: .\apps\accounting\forms.py:626 .\apps\accounting\forms.py:736
+msgid "area"
+msgstr "área"
+
+#: .\apps\accounting\forms.py:659
+msgid "comment about the sale return"
+msgstr "comentario acerca de la devolución de venta"
+
+#: .\apps\accounting\forms.py:673
+msgid "Enter a store associated with the purchase return"
+msgstr "Introduzca una tienda asociada a la devolución de compra"
+
+#: .\apps\accounting\forms.py:706
+msgid "Enter a supplier associated with the purchase return"
+msgstr "Introduzca un proveedor asociado a la devolución de compra"
+
+#: .\apps\accounting\forms.py:707
+msgid "Enter an area associated with the purchase return"
+msgstr "Introduzca un área asociada a la devolución de compra"
+
+#: .\apps\accounting\forms.py:708
+msgid "Enter a date associated with the purchase return"
+msgstr "Introduzca una fecha asociada a la devolución de compra"
+
+#: .\apps\accounting\forms.py:710
+msgid "Enter a comment associated with the purchase return"
+msgstr "Introduzca un comentario asociado a la devolución de compra"
+
+#: .\apps\accounting\forms.py:714
+msgid "It is required to enter a supplier"
+msgstr "Es requerido introducir un proveedor"
+
+#: .\apps\accounting\forms.py:727
+msgid "supplier"
+msgstr "proveedor"
+
+#: .\apps\accounting\forms.py:769
+msgid "comment about the purchase return"
+msgstr "comentario acerca de la devolución de compra"
+
+#: .\apps\accounting\forms.py:783
+msgid "Select a store associated with the adjustment"
+msgstr "Seleccione una tienda asociada al ajuste"
+
+#: .\apps\accounting\forms.py:823
+msgid "Select an area associated with the adjustment"
+msgstr "Seleccione un área asociada al ajuste"
+
+#: .\apps\accounting\forms.py:824
+msgid "Enter a date associated with the adjustment"
+msgstr "Introduzca una fecha asociada al ajuste"
+
+#: .\apps\accounting\forms.py:826
+msgid "Enter a comment associated with the adjustment"
+msgstr "Introduzca un comentario asociado al ajuste"
+
+#: .\apps\accounting\forms.py:871
+msgid "comment about the adjustment"
+msgstr "comentario acerca del ajuste"
+
+#: .\apps\accounting\models.py:11 .\apps\accounting\models.py:29
+#: .\apps\accounting\models.py:48
+msgid "Code"
+msgstr "Código"
+
+#: .\apps\accounting\models.py:12 .\apps\accounting\models.py:30
+#: .\apps\accounting\models.py:49
+msgid "Description"
+msgstr "Descripción"
+
+#: .\apps\accounting\models.py:16
+msgid "Store"
+msgstr "Tienda"
+
+#: .\apps\accounting\models.py:17
+msgid "Stores"
+msgstr "Tiendas"
+
+#: .\apps\accounting\models.py:34
+msgid "Area"
+msgstr "Área"
+
+#: .\apps\accounting\models.py:35
+msgid "Areas"
+msgstr "Áreas"
+
+#: .\apps\accounting\models.py:53
+msgid "Location"
+msgstr "Ubicación"
+
+#: .\apps\accounting\models.py:54
+msgid "Locations"
+msgstr "Ubicaciones"
+
+#: .\apps\accounting\views.py:39
+msgid "List of stores"
+msgstr "Lista de tiendas"
+
+#: .\apps\accounting\views.py:83
+msgid "New store"
+msgstr "Nueva tienda"
+
+#: .\apps\accounting\views.py:142
+msgid "Edit store"
+msgstr "Editar tienda"
+
+#: .\apps\accounting\views.py:239
+msgid "List of areas"
+msgstr "Lista de áreas"
+
+#: .\apps\accounting\views.py:285
+msgid "New area"
+msgstr "Nueva área"
+
+#: .\apps\accounting\views.py:353
+msgid "Edit area"
+msgstr "Editar área"
+
+#: .\apps\accounting\views.py:459
+msgid "List of locations"
+msgstr "Lista de ubicaciones"
+
+#: .\apps\accounting\views.py:507
+msgid "New location"
+msgstr "Nueva ubicación"
+
+#: .\apps\accounting\views.py:584
+msgid "Edit location"
+msgstr "Editar ubicación"
+
+#: .\apps\accounting\views.py:699
+msgid "List of purchases"
+msgstr "Lista de compras"
+
+#: .\apps\accounting\views.py:748
+msgid "New purchase"
+msgstr "Nueva compra"
+
+#: .\apps\accounting\views.py:889
+msgid "List of sales"
+msgstr "Lista de ventas"
+
+#: .\apps\accounting\views.py:939
+msgid "New sale"
+msgstr "Nueva venta"
+
+#: .\apps\accounting\views.py:1076
+msgid "List of sales returns"
+msgstr "Lista de devoluciones de venta"
+
+#: .\apps\accounting\views.py:1125
+msgid "New sale return"
+msgstr "Nueva devolución de venta"
+
+#: .\apps\accounting\views.py:1236
+msgid "List of purchases returns"
+msgstr "Lista de devoluciones de compra"
+
+#: .\apps\accounting\views.py:1285
+msgid "New purchase return"
+msgstr "Nueva devolución de compra"
+
+#: .\apps\accounting\views.py:1396
+msgid "List of positive adjustments"
+msgstr "Lista de ajustes positivos"
+
+#: .\apps\accounting\views.py:1445
+msgid "New positive adjustment"
+msgstr "Nuevo ajuste positivo"
+
+#: .\apps\accounting\views.py:1571
+msgid "List of negative adjustments"
+msgstr "Lista de ajustes negativos"
+
+#: .\apps\accounting\views.py:1620
+msgid "New negative adjustment"
+msgstr "Nuevo ajuste negativo"
+
+#: .\apps\accounting\views.py:1745
+msgid "List of positive value adjustments"
+msgstr "Lista de ajustes de valores positivos"
+
+#: .\apps\accounting\views.py:1832
+msgid "List of negative value adjustments"
+msgstr "Lista de ajustes de valores negativos"

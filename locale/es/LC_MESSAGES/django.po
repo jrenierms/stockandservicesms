@@ -1,0 +1,1008 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-18 14:24-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\stockandservicesms\settings.py:132
+msgid "English"
+msgstr "Inglés"
+
+#: .\stockandservicesms\settings.py:133
+msgid "Spanish"
+msgstr "Español"
+
+#: .\templates\accounting\create_area.html:14
+#: .\templates\accounting\list_area.html:15
+msgid "New area"
+msgstr "Nueva área"
+
+#: .\templates\accounting\create_area.html:16
+msgid "Edit area"
+msgstr "Editar área"
+
+#: .\templates\accounting\create_area.html:52
+#: .\templates\accounting\create_location.html:60
+#: .\templates\accounting\create_negative_adjustment.html:117
+#: .\templates\accounting\create_positive_adjustment.html:117
+#: .\templates\accounting\create_purchase.html:122
+#: .\templates\accounting\create_purchase_return.html:122
+#: .\templates\accounting\create_sale.html:122
+#: .\templates\accounting\create_sale_return.html:122
+#: .\templates\accounting\create_store.html:40
+#: .\templates\commercial\create_customer.html:86
+#: .\templates\commercial\create_customer_category.html:44
+#: .\templates\commercial\create_family.html:66
+#: .\templates\commercial\create_family_activity.html:40
+#: .\templates\commercial\create_family_group.html:40
+#: .\templates\commercial\create_measurement.html:40
+#: .\templates\commercial\create_product.html:66
+#: .\templates\commercial\create_product_conversion.html:52
+#: .\templates\commercial\create_supplier.html:80
+#: .\templates\security\profile.html:196
+msgid "To return"
+msgstr "Regresar"
+
+#: .\templates\accounting\create_area.html:55
+#: .\templates\accounting\create_location.html:63
+#: .\templates\accounting\create_negative_adjustment.html:120
+#: .\templates\accounting\create_positive_adjustment.html:120
+#: .\templates\accounting\create_purchase.html:125
+#: .\templates\accounting\create_purchase_return.html:125
+#: .\templates\accounting\create_sale.html:125
+#: .\templates\accounting\create_sale_return.html:125
+#: .\templates\accounting\create_store.html:43
+#: .\templates\commercial\create_customer.html:89
+#: .\templates\commercial\create_customer_category.html:47
+#: .\templates\commercial\create_family.html:69
+#: .\templates\commercial\create_family_activity.html:43
+#: .\templates\commercial\create_family_group.html:43
+#: .\templates\commercial\create_measurement.html:43
+#: .\templates\commercial\create_product.html:69
+#: .\templates\commercial\create_product_conversion.html:55
+#: .\templates\commercial\create_supplier.html:83
+#: .\templates\security\profile.html:199 .\templates\security\register.html:110
+msgid "Save"
+msgstr "Guardar"
+
+#: .\templates\accounting\create_location.html:14
+#: .\templates\accounting\list_location.html:15
+msgid "New location"
+msgstr "Nueva ubicación"
+
+#: .\templates\accounting\create_location.html:16
+msgid "Edit location"
+msgstr "Editar ubicación"
+
+#: .\templates\accounting\create_negative_adjustment.html:14
+#: .\templates\accounting\list_negative_adjustment.html:15
+msgid "New negative adjustment"
+msgstr "Nuevo ajuste negativo"
+
+#: .\templates\accounting\create_negative_adjustment.html:16
+msgid "Edit negative adjustment"
+msgstr "Editar ajuste negativo"
+
+#: .\templates\accounting\create_negative_adjustment.html:33
+msgid "Negative adjustment summary"
+msgstr "Resumen de ajuste negativo"
+
+#: .\templates\accounting\create_negative_adjustment.html:76
+msgid "Negative adjustment detail"
+msgstr "Detalle de ajuste negativo"
+
+#: .\templates\accounting\create_negative_adjustment.html:81
+#: .\templates\accounting\create_positive_adjustment.html:81
+#: .\templates\accounting\create_purchase.html:86
+#: .\templates\accounting\create_sale.html:86
+#: .\templates\accounting\print_negative_adjustment.html:55
+#: .\templates\accounting\print_negative_value_adjustment.html:55
+#: .\templates\accounting\print_positive_adjustment.html:55
+#: .\templates\accounting\print_positive_value_adjustment.html:55
+#: .\templates\accounting\print_purchase.html:55
+#: .\templates\accounting\print_purchase_return.html:55
+#: .\templates\accounting\print_sale.html:55
+#: .\templates\accounting\print_sale_return.html:55
+#: .\templates\commercial\list_product_conversion.html:25
+msgid "Product"
+msgstr "Producto"
+
+#: .\templates\accounting\create_negative_adjustment.html:96
+#: .\templates\accounting\create_positive_adjustment.html:96
+#: .\templates\accounting\create_purchase.html:101
+#: .\templates\accounting\create_purchase_return.html:101
+#: .\templates\accounting\create_sale.html:101
+#: .\templates\accounting\create_sale_return.html:101
+msgid "Product, measurement"
+msgstr "Producto, medida"
+
+#: .\templates\accounting\create_negative_adjustment.html:97
+#: .\templates\accounting\create_positive_adjustment.html:97
+#: .\templates\accounting\create_purchase_return.html:102
+#: .\templates\accounting\create_sale.html:102
+#: .\templates\accounting\create_sale_return.html:102
+msgid "Available"
+msgstr "Disponible"
+
+#: .\templates\accounting\create_negative_adjustment.html:98
+#: .\templates\accounting\create_positive_adjustment.html:98
+#: .\templates\accounting\create_purchase.html:102
+#: .\templates\accounting\create_purchase_return.html:103
+#: .\templates\accounting\create_sale.html:103
+#: .\templates\accounting\create_sale_return.html:103
+#: .\templates\accounting\print_negative_adjustment.html:57
+#: .\templates\accounting\print_negative_value_adjustment.html:57
+#: .\templates\accounting\print_positive_adjustment.html:57
+#: .\templates\accounting\print_positive_value_adjustment.html:57
+#: .\templates\accounting\print_purchase.html:57
+#: .\templates\accounting\print_purchase_return.html:57
+#: .\templates\accounting\print_sale.html:57
+#: .\templates\accounting\print_sale_return.html:57
+msgid "Quantity"
+msgstr "Cantidad"
+
+#: .\templates\accounting\create_negative_adjustment.html:99
+#: .\templates\accounting\create_positive_adjustment.html:99
+#: .\templates\accounting\create_purchase.html:103
+#: .\templates\accounting\create_purchase_return.html:104
+#: .\templates\accounting\print_negative_adjustment.html:58
+#: .\templates\accounting\print_negative_value_adjustment.html:58
+#: .\templates\accounting\print_positive_adjustment.html:58
+#: .\templates\accounting\print_positive_value_adjustment.html:58
+#: .\templates\accounting\print_purchase.html:58
+#: .\templates\accounting\print_purchase_return.html:58
+msgid "Cost Price"
+msgstr "Precio Costo"
+
+#: .\templates\accounting\create_negative_adjustment.html:100
+#: .\templates\accounting\create_positive_adjustment.html:100
+#: .\templates\accounting\create_purchase.html:104
+#: .\templates\accounting\create_purchase_return.html:105
+#: .\templates\accounting\create_sale.html:105
+#: .\templates\accounting\create_sale_return.html:105
+msgid "Subtotal"
+msgstr "Subtotal"
+
+#: .\templates\accounting\create_negative_adjustment.html:101
+#: .\templates\accounting\create_positive_adjustment.html:101
+#: .\templates\accounting\create_purchase.html:106
+#: .\templates\accounting\create_purchase_return.html:106
+#: .\templates\accounting\create_sale.html:106
+#: .\templates\accounting\create_sale_return.html:106
+#: .\templates\accounting\list_area.html:28
+#: .\templates\accounting\list_location.html:29
+#: .\templates\accounting\list_negative_adjustment.html:29
+#: .\templates\accounting\list_negative_value_adjustment.html:28
+#: .\templates\accounting\list_positive_adjustment.html:29
+#: .\templates\accounting\list_positive_value_adjustment.html:28
+#: .\templates\accounting\list_purchase.html:30
+#: .\templates\accounting\list_purchase_return.html:30
+#: .\templates\accounting\list_sale.html:30
+#: .\templates\accounting\list_sale_return.html:30
+#: .\templates\accounting\list_store.html:27
+#: .\templates\commercial\list_customer.html:29
+#: .\templates\commercial\list_customer_category.html:28
+#: .\templates\commercial\list_family.html:30
+#: .\templates\commercial\list_family_activity.html:27
+#: .\templates\commercial\list_family_group.html:27
+#: .\templates\commercial\list_measurement.html:27
+#: .\templates\commercial\list_product.html:30
+#: .\templates\commercial\list_product_conversion.html:28
+#: .\templates\commercial\list_supplier.html:29
+msgid "Options"
+msgstr "Opciones"
+
+#: .\templates\accounting\create_positive_adjustment.html:14
+#: .\templates\accounting\list_positive_adjustment.html:15
+msgid "New positive adjustment"
+msgstr "Nuevo ajuste positivo"
+
+#: .\templates\accounting\create_positive_adjustment.html:16
+msgid "Edit positive adjustment"
+msgstr "Editar ajuste positivo"
+
+#: .\templates\accounting\create_positive_adjustment.html:33
+msgid "Positive adjustment summary"
+msgstr "Resumen de ajuste positivo"
+
+#: .\templates\accounting\create_positive_adjustment.html:76
+msgid "Positive adjustment detail"
+msgstr "Resumen de ajuste positivo"
+
+#: .\templates\accounting\create_purchase.html:14
+#: .\templates\accounting\list_purchase.html:15
+msgid "New purchase"
+msgstr "Nueva compra"
+
+#: .\templates\accounting\create_purchase.html:16
+msgid "Edit purchase"
+msgstr "Editar compra"
+
+#: .\templates\accounting\create_purchase.html:33
+msgid "Purchase summary"
+msgstr "Resumen de compra"
+
+#: .\templates\accounting\create_purchase.html:81
+msgid "Purchase detail"
+msgstr "Detalle de compra"
+
+#: .\templates\accounting\create_purchase.html:105
+msgid "Location"
+msgstr "Ubicación"
+
+#: .\templates\accounting\create_purchase_return.html:14
+#: .\templates\accounting\list_purchase_return.html:15
+msgid "New purchase return"
+msgstr "Nueva devolución de compra"
+
+#: .\templates\accounting\create_purchase_return.html:16
+msgid "Edit purchase return"
+msgstr "Editar devolución de compra"
+
+#: .\templates\accounting\create_purchase_return.html:33
+msgid "Purchase return summary"
+msgstr "Resumen de devolución de compra"
+
+#: .\templates\accounting\create_purchase_return.html:81
+msgid "Purchase return detail"
+msgstr "Detalle de devolución de compra"
+
+#: .\templates\accounting\create_purchase_return.html:86
+msgid "Purchase"
+msgstr "Compra"
+
+#: .\templates\accounting\create_sale.html:14
+#: .\templates\accounting\list_sale.html:15
+msgid "New sale"
+msgstr "Nueva venta"
+
+#: .\templates\accounting\create_sale.html:16
+msgid "Edit sale"
+msgstr "Editar venta"
+
+#: .\templates\accounting\create_sale.html:33
+msgid "Sale summary"
+msgstr "Resumen de venta"
+
+#: .\templates\accounting\create_sale.html:81
+msgid "Sale detail"
+msgstr "Detalle de venta"
+
+#: .\templates\accounting\create_sale.html:104
+#: .\templates\accounting\create_sale_return.html:104
+#: .\templates\accounting\print_sale.html:58
+#: .\templates\accounting\print_sale_return.html:58
+msgid "Sale Price"
+msgstr "Precio Venta"
+
+#: .\templates\accounting\create_sale_return.html:14
+#: .\templates\accounting\list_sale_return.html:15
+msgid "New sale return"
+msgstr "Nueva devolución de venta"
+
+#: .\templates\accounting\create_sale_return.html:16
+msgid "Edit sale return"
+msgstr "Editar devolución de venta"
+
+#: .\templates\accounting\create_sale_return.html:33
+msgid "Sale return summary"
+msgstr "Resumen de devolución de venta"
+
+#: .\templates\accounting\create_sale_return.html:81
+msgid "Sale return detail"
+msgstr "Detalle de devolución de venta"
+
+#: .\templates\accounting\create_sale_return.html:86
+msgid "Sale"
+msgstr "Venta"
+
+#: .\templates\accounting\create_store.html:14
+#: .\templates\accounting\list_store.html:15
+msgid "New store"
+msgstr "Nueva tienda"
+
+#: .\templates\accounting\create_store.html:16
+msgid "Edit store"
+msgstr "Editar tienda"
+
+#: .\templates\accounting\list_area.html:11
+msgid "List of areas"
+msgstr "Lista de áreas"
+
+#: .\templates\accounting\list_area.html:25
+#: .\templates\accounting\list_location.html:25
+#: .\templates\accounting\list_store.html:25
+#: .\templates\commercial\list_customer.html:25
+#: .\templates\commercial\list_customer_category.html:25
+#: .\templates\commercial\list_family.html:25
+#: .\templates\commercial\list_family_activity.html:25
+#: .\templates\commercial\list_family_group.html:25
+#: .\templates\commercial\list_measurement.html:25
+#: .\templates\commercial\list_product.html:25
+#: .\templates\commercial\list_supplier.html:25
+msgid "Code"
+msgstr "Código"
+
+#: .\templates\accounting\list_area.html:26
+#: .\templates\accounting\list_location.html:26
+#: .\templates\accounting\list_store.html:26
+#: .\templates\commercial\list_customer.html:26
+#: .\templates\commercial\list_customer_category.html:26
+#: .\templates\commercial\list_family.html:26
+#: .\templates\commercial\list_family_activity.html:26
+#: .\templates\commercial\list_family_group.html:26
+#: .\templates\commercial\list_measurement.html:26
+#: .\templates\commercial\list_product.html:26
+#: .\templates\commercial\list_supplier.html:26
+msgid "Description"
+msgstr "Descripción"
+
+#: .\templates\accounting\list_area.html:27
+#: .\templates\accounting\list_location.html:28
+msgid "Store"
+msgstr "Tienda"
+
+#: .\templates\accounting\list_location.html:11
+msgid "List of locations"
+msgstr "Lista de ubicaciones"
+
+#: .\templates\accounting\list_location.html:27
+msgid "Area"
+msgstr "Área"
+
+#: .\templates\accounting\list_negative_adjustment.html:11
+msgid "List of negative adjustments"
+msgstr "Lista de ajustes negativos"
+
+#: .\templates\accounting\list_negative_adjustment.html:25
+#: .\templates\accounting\list_negative_value_adjustment.html:24
+#: .\templates\accounting\list_positive_adjustment.html:25
+#: .\templates\accounting\list_positive_value_adjustment.html:24
+#: .\templates\accounting\list_purchase.html:25
+#: .\templates\accounting\list_purchase_return.html:25
+#: .\templates\accounting\list_sale.html:25
+#: .\templates\accounting\list_sale_return.html:25
+msgid "Document"
+msgstr "Documento"
+
+#: .\templates\accounting\list_negative_adjustment.html:26
+#: .\templates\accounting\list_negative_value_adjustment.html:25
+#: .\templates\accounting\list_positive_adjustment.html:26
+#: .\templates\accounting\list_positive_value_adjustment.html:25
+#: .\templates\accounting\list_purchase.html:27
+#: .\templates\accounting\list_purchase_return.html:27
+#: .\templates\accounting\list_sale.html:27
+#: .\templates\accounting\list_sale_return.html:27
+msgid "Source document"
+msgstr "Documento origen"
+
+#: .\templates\accounting\list_negative_adjustment.html:27
+#: .\templates\accounting\list_negative_value_adjustment.html:26
+#: .\templates\accounting\list_positive_adjustment.html:27
+#: .\templates\accounting\list_positive_value_adjustment.html:26
+#: .\templates\accounting\list_purchase.html:28
+#: .\templates\accounting\list_purchase_return.html:28
+#: .\templates\accounting\list_sale.html:28
+#: .\templates\accounting\list_sale_return.html:28
+msgid "Date"
+msgstr "Fecha"
+
+#: .\templates\accounting\list_negative_adjustment.html:28
+#: .\templates\accounting\list_negative_value_adjustment.html:27
+#: .\templates\accounting\list_positive_adjustment.html:28
+#: .\templates\accounting\list_positive_value_adjustment.html:27
+#: .\templates\accounting\list_purchase.html:29
+#: .\templates\accounting\list_purchase_return.html:29
+#: .\templates\accounting\list_sale.html:29
+#: .\templates\accounting\list_sale_return.html:29
+#: .\templates\security\view_audit.html:35
+msgid "Comment"
+msgstr "Comentario"
+
+#: .\templates\accounting\list_negative_value_adjustment.html:11
+msgid "List of negative value adjustments"
+msgstr "Lista de ajustes de valores negativos"
+
+#: .\templates\accounting\list_positive_adjustment.html:11
+msgid "List of positive adjustments"
+msgstr "Lista de ajustes positivos"
+
+#: .\templates\accounting\list_positive_value_adjustment.html:11
+msgid "List of positive value adjustments"
+msgstr "Lista de ajustes de valores positivos"
+
+#: .\templates\accounting\list_purchase.html:11
+msgid "List of purchases"
+msgstr "Lista de compras"
+
+#: .\templates\accounting\list_purchase.html:26
+#: .\templates\accounting\list_purchase_return.html:26
+msgid "Supplier"
+msgstr "Proveedor"
+
+#: .\templates\accounting\list_purchase_return.html:11
+msgid "List of purchases returns"
+msgstr "Lista de devoluciones de compra"
+
+#: .\templates\accounting\list_sale.html:11
+msgid "List of sales"
+msgstr "Lista de ventas"
+
+#: .\templates\accounting\list_sale.html:26
+#: .\templates\accounting\list_sale_return.html:26
+msgid "Customer"
+msgstr "Cliente"
+
+#: .\templates\accounting\list_sale_return.html:11
+msgid "List of sales returns"
+msgstr "Lista de devoluciones de venta"
+
+#: .\templates\accounting\list_store.html:11
+msgid "List of stores"
+msgstr "Lista de tiendas"
+
+#: .\templates\accounting\print_negative_adjustment.html:48
+msgid "Negative adjustment:"
+msgstr "Ajuste negativo:"
+
+#: .\templates\accounting\print_negative_adjustment.html:49
+#: .\templates\accounting\print_negative_value_adjustment.html:49
+#: .\templates\accounting\print_positive_adjustment.html:49
+#: .\templates\accounting\print_positive_value_adjustment.html:49
+#: .\templates\accounting\print_purchase.html:49
+#: .\templates\accounting\print_purchase_return.html:49
+#: .\templates\accounting\print_sale.html:49
+#: .\templates\accounting\print_sale_return.html:49
+msgid "Date:"
+msgstr "Fecha:"
+
+#: .\templates\accounting\print_negative_adjustment.html:50
+#: .\templates\accounting\print_negative_adjustment.html:79
+#: .\templates\accounting\print_negative_value_adjustment.html:50
+#: .\templates\accounting\print_negative_value_adjustment.html:79
+#: .\templates\accounting\print_positive_adjustment.html:50
+#: .\templates\accounting\print_positive_adjustment.html:79
+#: .\templates\accounting\print_positive_value_adjustment.html:50
+#: .\templates\accounting\print_positive_value_adjustment.html:79
+msgid "Source document:"
+msgstr "Documento origen:"
+
+#: .\templates\accounting\print_negative_adjustment.html:56
+#: .\templates\accounting\print_negative_value_adjustment.html:56
+#: .\templates\accounting\print_positive_adjustment.html:56
+#: .\templates\accounting\print_positive_value_adjustment.html:56
+#: .\templates\accounting\print_purchase.html:56
+#: .\templates\accounting\print_purchase_return.html:56
+#: .\templates\accounting\print_sale.html:56
+#: .\templates\accounting\print_sale_return.html:56
+#: .\templates\commercial\list_product.html:27
+#: .\templates\commercial\list_product_conversion.html:27
+msgid "Measurement"
+msgstr "Medida"
+
+#: .\templates\accounting\print_negative_adjustment.html:59
+#: .\templates\accounting\print_negative_value_adjustment.html:59
+#: .\templates\accounting\print_positive_adjustment.html:59
+#: .\templates\accounting\print_positive_value_adjustment.html:59
+#: .\templates\accounting\print_purchase.html:59
+#: .\templates\accounting\print_purchase_return.html:59
+#: .\templates\accounting\print_sale.html:59
+#: .\templates\accounting\print_sale_return.html:59
+msgid "Total"
+msgstr "Total"
+
+#: .\templates\accounting\print_negative_value_adjustment.html:48
+msgid "Negative value adjustment:"
+msgstr "Ajuste de valor negativo:"
+
+#: .\templates\accounting\print_positive_adjustment.html:48
+msgid "Positive adjustment:"
+msgstr "Ajuste positivo:"
+
+#: .\templates\accounting\print_positive_value_adjustment.html:48
+msgid "Positive value adjustment:"
+msgstr "Ajuste de valor positivo:"
+
+#: .\templates\accounting\print_purchase.html:48
+msgid "Purchase:"
+msgstr "Compra:"
+
+#: .\templates\accounting\print_purchase.html:50
+#: .\templates\accounting\print_purchase.html:79
+#: .\templates\accounting\print_purchase_return.html:50
+#: .\templates\accounting\print_purchase_return.html:79
+msgid "Supplier:"
+msgstr "Proveedor:"
+
+#: .\templates\accounting\print_purchase_return.html:48
+msgid "Purchase return:"
+msgstr "Devolución de compra:"
+
+#: .\templates\accounting\print_sale.html:48
+msgid "Sale:"
+msgstr "Venta:"
+
+#: .\templates\accounting\print_sale.html:50
+#: .\templates\accounting\print_sale.html:79
+#: .\templates\accounting\print_sale_return.html:50
+#: .\templates\accounting\print_sale_return.html:79
+msgid "Customer:"
+msgstr "Cliente:"
+
+#: .\templates\accounting\print_sale_return.html:48
+msgid "Sale return:"
+msgstr "Devolución de venta:"
+
+#: .\templates\base\base.html:53 .\templates\base\base.html:473
+msgid "Home"
+msgstr "Inicio"
+
+#: .\templates\base\base.html:56
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\templates\base\base.html:64 .\templates\base\base.html:65
+msgid "Search"
+msgstr "Buscar"
+
+#: .\templates\base\base.html:186
+msgid "Member since"
+msgstr "Miembro desde"
+
+#: .\templates\base\base.html:194
+msgid "Password reset"
+msgstr "Resetear contraseña"
+
+#: .\templates\base\base.html:202
+msgid "Profile"
+msgstr "Perfil"
+
+#: .\templates\base\base.html:203
+msgid "Log out"
+msgstr "Cerrar sesión"
+
+#: .\templates\base\base.html:243
+msgid "COMMERCIAL"
+msgstr "COMERCIAL"
+
+#: .\templates\base\base.html:248
+msgid "Nomenclators"
+msgstr "Nomencladores"
+
+#: .\templates\base\base.html:257
+msgid "Suppliers"
+msgstr "Proveedores"
+
+#: .\templates\base\base.html:263
+msgid "Customer categories"
+msgstr "Categorías clientes"
+
+#: .\templates\base\base.html:269
+msgid "Customers"
+msgstr "Clientes"
+
+#: .\templates\base\base.html:275
+msgid "Family groups"
+msgstr "Grupos familias"
+
+#: .\templates\base\base.html:281
+msgid "Familiy activities"
+msgstr "Actividades familias"
+
+#: .\templates\base\base.html:287
+msgid "Families"
+msgstr "Familias"
+
+#: .\templates\base\base.html:293
+msgid "Measurements"
+msgstr "Medidas"
+
+#: .\templates\base\base.html:299
+msgid "Products"
+msgstr "Productos"
+
+#: .\templates\base\base.html:305
+msgid "Product conversions"
+msgstr "Conversiones productos"
+
+#: .\templates\base\base.html:311
+msgid "Stores"
+msgstr "Tiendas"
+
+#: .\templates\base\base.html:317
+msgid "Areas"
+msgstr "Áreas"
+
+#: .\templates\base\base.html:323
+msgid "Locations"
+msgstr "Ubicaciones"
+
+#: .\templates\base\base.html:331
+msgid "ACCOUNTING"
+msgstr "CONTABILIDAD"
+
+#: .\templates\base\base.html:336
+msgid "Transactions"
+msgstr "Transacciones"
+
+#: .\templates\base\base.html:345
+msgid "Purchases"
+msgstr "Compras"
+
+#: .\templates\base\base.html:352
+msgid "Sales"
+msgstr "Ventas"
+
+#: .\templates\base\base.html:358
+msgid "Sales returns"
+msgstr "Devoluciones de venta"
+
+#: .\templates\base\base.html:364
+msgid "Purchase returns"
+msgstr "Devoluciones de compra"
+
+#: .\templates\base\base.html:370
+msgid "Positive adjustments"
+msgstr "Ajustes positivos"
+
+#: .\templates\base\base.html:376
+msgid "Negative adjustments"
+msgstr "Ajustes negativos"
+
+#: .\templates\base\base.html:382
+msgid "Positive value adjust..."
+msgstr "Ajustes valores positivos"
+
+#: .\templates\base\base.html:388
+msgid "Negative value adjust..."
+msgstr "Ajustes valores negativos"
+
+#: .\templates\base\base.html:396
+msgid "SECURITY"
+msgstr "SEGURIDAD"
+
+#: .\templates\base\base.html:401 .\templates\base\base.html:410
+msgid "Audit"
+msgstr "Auditoría"
+
+#: .\templates\base\base.html:419 .\templates\base\base.html:429
+msgid "Administration"
+msgstr "Administración"
+
+#: .\templates\base\base.html:438 .\templates\base\base.html:447
+msgid "Settings"
+msgstr "Configuraciones"
+
+#: .\templates\base\base.html:491 .\templates\security\login.html:111
+#: .\templates\security\register.html:142
+msgid "Success!"
+msgstr "Éxito!"
+
+#: .\templates\base\base.html:498 .\templates\security\login.html:97
+#: .\templates\security\register.html:128
+msgid "Information!"
+msgstr "Información!"
+
+#: .\templates\base\base.html:505 .\templates\security\login.html:104
+#: .\templates\security\register.html:135
+msgid "Warning!"
+msgstr "Advertencia!"
+
+#: .\templates\base\base.html:512 .\templates\security\login.html:90
+#: .\templates\security\register.html:121
+msgid "Error!"
+msgstr "Error!"
+
+#: .\templates\commercial\create_customer.html:14
+#: .\templates\commercial\list_customer.html:15
+msgid "New customer"
+msgstr "Nuevo cliente"
+
+#: .\templates\commercial\create_customer.html:16
+msgid "Edit customer"
+msgstr "Editar cliente"
+
+#: .\templates\commercial\create_customer_category.html:14
+#: .\templates\commercial\list_customer_category.html:15
+msgid "New customer category"
+msgstr "Nueva categoría de cliente"
+
+#: .\templates\commercial\create_customer_category.html:16
+msgid "Edit customer category"
+msgstr "Editar categoría de cliente"
+
+#: .\templates\commercial\create_family.html:14
+#: .\templates\commercial\list_family.html:15
+msgid "New family"
+msgstr "Nueva familia"
+
+#: .\templates\commercial\create_family.html:16
+msgid "Edit family"
+msgstr "Editar familia"
+
+#: .\templates\commercial\create_family_activity.html:14
+#: .\templates\commercial\list_family_activity.html:15
+msgid "New family activity"
+msgstr "Nueva actividad de familia"
+
+#: .\templates\commercial\create_family_activity.html:16
+msgid "Edit family activity"
+msgstr "Editar actividad de familia"
+
+#: .\templates\commercial\create_family_group.html:14
+#: .\templates\commercial\list_family_group.html:15
+msgid "New family group"
+msgstr "Nuevo grupo de familia"
+
+#: .\templates\commercial\create_family_group.html:16
+msgid "Edit family group"
+msgstr "Editar grupo de familia"
+
+#: .\templates\commercial\create_measurement.html:14
+#: .\templates\commercial\list_measurement.html:15
+msgid "New measurement"
+msgstr "Nueva medida"
+
+#: .\templates\commercial\create_measurement.html:16
+msgid "Edit measurement"
+msgstr "Editar medida"
+
+#: .\templates\commercial\create_product.html:14
+#: .\templates\commercial\list_product.html:15
+msgid "New product"
+msgstr "Nuevo producto"
+
+#: .\templates\commercial\create_product.html:16
+msgid "Edit product"
+msgstr "Editar producto"
+
+#: .\templates\commercial\create_product_conversion.html:14
+#: .\templates\commercial\list_product_conversion.html:15
+msgid "New product conversion"
+msgstr "Nueva conversión de producto"
+
+#: .\templates\commercial\create_product_conversion.html:16
+msgid "Edit product conversion"
+msgstr "Editar conversión de producto"
+
+#: .\templates\commercial\create_supplier.html:14
+#: .\templates\commercial\list_supplier.html:15
+msgid "New supplier"
+msgstr "Nuevo proveedor"
+
+#: .\templates\commercial\create_supplier.html:16
+msgid "Edit supplier"
+msgstr "Editar proveedor"
+
+#: .\templates\commercial\list_customer.html:11
+msgid "List of customers"
+msgstr "Lista de clientes"
+
+#: .\templates\commercial\list_customer.html:27
+#: .\templates\commercial\list_supplier.html:27
+msgid "Owner"
+msgstr "Propietario"
+
+#: .\templates\commercial\list_customer.html:28
+msgid "Category"
+msgstr "Categoría"
+
+#: .\templates\commercial\list_customer_category.html:11
+msgid "List of customer categories"
+msgstr "Lista de categorías de clientes"
+
+#: .\templates\commercial\list_customer_category.html:27
+msgid "Discount"
+msgstr "Descuento"
+
+#: .\templates\commercial\list_family.html:11
+msgid "List of families"
+msgstr "Lista de familias"
+
+#: .\templates\commercial\list_family.html:27
+msgid "Increment"
+msgstr "Incremento"
+
+#: .\templates\commercial\list_family.html:28
+msgid "Group"
+msgstr "Grupo"
+
+#: .\templates\commercial\list_family.html:29
+msgid "Activity"
+msgstr "Actividad"
+
+#: .\templates\commercial\list_family_activity.html:11
+msgid "List of family activities"
+msgstr "Lista de actividades de familias"
+
+#: .\templates\commercial\list_family_group.html:11
+msgid "List of family groups"
+msgstr "Lista de grupos de familias"
+
+#: .\templates\commercial\list_measurement.html:11
+msgid "List of measurements"
+msgstr "Lista de medidas"
+
+#: .\templates\commercial\list_product.html:11
+msgid "List of products"
+msgstr "Lista de productos"
+
+#: .\templates\commercial\list_product.html:28
+msgid "Sale price"
+msgstr "Precio de venta"
+
+#: .\templates\commercial\list_product.html:29
+msgid "Family"
+msgstr "Familia"
+
+#: .\templates\commercial\list_product_conversion.html:11
+msgid "List of product conversions"
+msgstr "Lista de conversiones de productos"
+
+#: .\templates\commercial\list_product_conversion.html:26
+msgid "Value"
+msgstr "Valor"
+
+#: .\templates\commercial\list_supplier.html:11
+msgid "List of suppliers"
+msgstr "Lista de proveedores"
+
+#: .\templates\commercial\list_supplier.html:28
+#: .\templates\security\profile.html:47
+msgid "Address"
+msgstr "Dirección"
+
+#: .\templates\home\index.html:11
+msgid "Line Chart - Daily Sales - Year:"
+msgstr "Gráfico de Línea - Ventas Diarias - Año:"
+
+#: .\templates\home\index.html:11
+msgid " - Month:"
+msgstr " - Mes:"
+
+#: .\templates\home\index.html:37
+msgid "Bar Chart - Monthly Sales - Year:"
+msgstr "Gráfico de Barras - Ventas Mensuales - Año:"
+
+#: .\templates\home\index.html:66
+msgid "Stacked Bar Chart - Monthly Sales - Year:"
+msgstr "Gráfico de Barras Apiladas - Ventas Mensuales - Año:"
+
+#: .\templates\home\index.html:95
+msgid "Donut Chart - Top 10 Products by Sales - Year:"
+msgstr "Gráfico de Anillos - 10 Mejores Productos según Ventas - Año:"
+
+#: .\templates\home\index.html:119
+msgid "Pie Chart - Top 10 Products by Profit - Year:"
+msgstr "Gráfico Circular - 10 Mejores Productos según Utilidades - Año:"
+
+#: .\templates\security\error_403.html:13
+msgid "Oops! Does not have access."
+msgstr "Oops! No tiene acceso."
+
+#: .\templates\security\error_403.html:15
+msgid "You have tried to access a page to which you do not have access."
+msgstr "Ha intentado acceder a una página a la cual no tiene acceso."
+
+#: .\templates\security\error_403.html:16
+msgid "In the meantime, you can"
+msgstr "Entretanto, usted puede"
+
+#: .\templates\security\error_403.html:17
+msgid "back to the beginning."
+msgstr "regresar al inicio"
+
+#: .\templates\security\error_403.html:17
+msgid "or"
+msgstr "o"
+
+#: .\templates\security\error_403.html:18
+msgid "log in"
+msgstr "iniciar sesión"
+
+#: .\templates\security\error_403.html:18
+msgid "with another user."
+msgstr "con otro usuario."
+
+#: .\templates\security\login.html:52 .\templates\security\register.html:51
+msgid "Stock and Services Manager System"
+msgstr "Sistema Gestor de Stock y Servicios"
+
+#: .\templates\security\login.html:57 .\templates\security\login.html:79
+#: .\templates\security\register.html:152
+msgid "Log in"
+msgstr "Iniciar sesión"
+
+#: .\templates\security\login.html:62
+msgid "user"
+msgstr "usuario"
+
+#: .\templates\security\login.html:70
+msgid "password"
+msgstr "contraseña"
+
+#: .\templates\security\login.html:120
+msgid "Don't you have a user account?"
+msgstr "¿No tienes una cuenta de usuario?"
+
+#: .\templates\security\login.html:121
+msgid "Sign up"
+msgstr "Registrate"
+
+#: .\templates\security\profile.html:23
+msgid "User name"
+msgstr "Nombre de usuario"
+
+#: .\templates\security\profile.html:26
+msgid "Enabled from"
+msgstr "Habilitado a partir"
+
+#: .\templates\security\profile.html:29
+msgid "Last login"
+msgstr "Último inicio sesión"
+
+#: .\templates\security\profile.html:43
+msgid "About me"
+msgstr "Acerca de mi"
+
+#: .\templates\security\profile.html:57
+msgid "Email"
+msgstr "Correo"
+
+#: .\templates\security\profile.html:67
+msgid "Mobile phone"
+msgstr "Teléfono móvil"
+
+#: .\templates\security\profile.html:67
+msgid "Landline"
+msgstr "Teléfono fijo"
+
+#: .\templates\security\profile.html:88
+msgid "Edit profile"
+msgstr "Editar perfil"
+
+#: .\templates\security\register.html:56
+msgid "Create a user account"
+msgstr "Crear una cuenta de usuario"
+
+#: .\templates\security\register.html:151
+msgid "Do you already have a user account?"
+msgstr "¿Ya tienes una cuenta de usuario?"
+
+#: .\templates\security\view_audit.html:11
+msgid "Consult audit"
+msgstr "Consultar auditoría"
+
+#: .\templates\security\view_audit.html:16
+msgid "Date range:"
+msgstr "Rango de fecha:"
+
+#: .\templates\security\view_audit.html:31
+msgid "User"
+msgstr "Usuario"
+
+#: .\templates\security\view_audit.html:32
+msgid "Action"
+msgstr "Acción"
+
+#: .\templates\security\view_audit.html:33
+msgid "Access"
+msgstr "Acceso"
+
+#: .\templates\security\view_audit.html:34
+msgid "Date - Time"
+msgstr "Fecha - Hora"

@@ -1,0 +1,122 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+
+{% block main_content %}
+    <div id="main_content_row" class="row">
+      <div id="main_content_col" class="col-12">
+        <div class="card card-outline card-secondary">
+          <div class="card-header">
+            <div class="row">
+              <div class="col-sm-12 col-md-7" style="margin: auto;">
+                <h3 class="card-title"><i class="fas fa-table"></i> {% trans 'List of families' %}</h3>
+              </div>
+              <div class="col-sm-12 col-md-5" align="right" style="margin: auto;">
+                <a class="btn btn-primary" href="{{ create_url }}">
+                    <i class="fas fa-plus"></i> {% trans 'New family' %}</a>
+              </div>
+            </div>
+          </div>
+          <!-- /.card-header -->
+          <div class="card-body">
+            <table id="itemTable" class="table table-bordered table-hover table-sm">
+              <thead>
+                  <tr>
+                    <th style="width: 0%;">Id</th>
+                    <th style="width: 10%;">{% trans 'Code' %}</th>
+                    <th style="width: 25%;">{% trans 'Description' %}</th>
+                    <th style="width: 10%;">{% trans 'Increment' %}</th>
+                    <th style="width: 20%;">{% trans 'Group' %}</th>
+                    <th style="width: 20%;">{% trans 'Activity' %}</th>
+                    <th style="width: 15%;">{% trans 'Options' %}</th>
+                  </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+{% endblock main_content %}
+
+{% block javascript %}
+<script>
+
+  var tablaItem;
+
+  $(document).ready(function() {
+    tablaItem = $('#itemTable').DataTable({
+      "paging": true,
+      "pagingType": "full_numbers",
+      "lengthChange": false,
+      "searching": true,
+      "ordering": true,
+      "info": true,
+      "responsive": true,
+      "autoWidth": false,
+      "processing": true,
+      "serverSide": true,
+      ajax: {
+        url: '{{ list_url }}',
+        type: 'POST'
+      },
+      columns: [
+        { data: 'id', visible: false },
+        { data: 'code' },
+        { data: 'description' },
+        { data: 'increment' },
+        { data: 'group__description' },
+        { data: 'activity__description' },
+        { data: null, orderable: false,
+          render: function ( data, type, row ) {
+            if ( type === 'display' || type === 'filter' ) {
+              let edit_url = '{{ edit_url }}';
+              let edit_tooltip = '{{ dialogs.edit_link_button }}'
+              let delete_tooltip = '{{ dialogs.delete_link_button }}'
+              data = '<div align="left" style="margin:auto;">' +
+                  '<a id="edit-' + row.id + '" class="btn btn-warning btn-sm" href="'+ edit_url + row.id + '/" ' +
+                  'style="margin-right:16px;" data-toggle="tooltip" title="' + edit_tooltip + '"\>' +
+                  '<i class="fas fa-edit"></i></a>' +
+                  '<a id="delete-' + row.id + '" class="btn btn-danger btn-sm" onClick="deleteItem(' + row.id + ')" ' +
+                  'style="margin-right:16px; color:white;" data-toggle="tooltip" title="' + delete_tooltip + '"\>' +
+                  '<i class="fas fa-trash"></i></a>' +
+                  '</div>';
+
+               return data;
+            }
+            return data;
+          }
+        }
+      ],
+      language: {
+        processing: '{{ dialogs.table_language.processing }}',
+        search: '{{ dialogs.table_language.search }}',
+        lengthMenu: '{{ dialogs.table_language.lengthMenu }}',
+        info: '{{ dialogs.table_language.info }}',
+        infoEmpty: '{{ dialogs.table_language.infoEmpty }}',
+        infoFiltered: '{{ dialogs.table_language.infoFiltered }}',
+        infoPostFix: "",
+        loadingRecords: '{{ dialogs.table_language.loadingRecords }}',
+        zeroRecords: '{{ dialogs.table_language.zeroRecords }}',
+        emptyTable: '{{ dialogs.table_language.emptyTable }}',
+        paginate: {
+          first: '{{ dialogs.table_language.paginate.first }}',
+          previous: '{{ dialogs.table_language.paginate.previous }}',
+          next: '{{ dialogs.table_language.paginate.next }}',
+          last: '{{ dialogs.table_language.paginate.last }}'
+        },
+        aria: {
+          sortAscending: '{{ dialogs.table_language.aria.sortAscending }}',
+          sortDescending: '{{ dialogs.table_language.aria.sortDescending }}'
+        }
+      }
+    });
+  });
+
+</script>
+{% endblock javascript %}

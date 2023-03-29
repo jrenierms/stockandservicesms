@@ -1,0 +1,301 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-18 14:24-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\security\forms.py:11 .\apps\security\forms.py:96
+msgid "Password:"
+msgstr ""
+
+#: .\apps\security\forms.py:12 .\apps\security\forms.py:97
+#: .\apps\security\forms.py:409 .\apps\security\forms.py:424
+msgid "Enter a password of at least 8 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:14 .\apps\security\forms.py:99
+msgid "It is required enter a password"
+msgstr ""
+
+#: .\apps\security\forms.py:19 .\apps\security\forms.py:104
+msgid "password"
+msgstr ""
+
+#: .\apps\security\forms.py:26 .\apps\security\forms.py:111
+#: .\apps\security\forms.py:438
+msgid "Confirm password:"
+msgstr ""
+
+#: .\apps\security\forms.py:27 .\apps\security\forms.py:112
+#: .\apps\security\forms.py:439
+msgid "Confirm the password previously entered"
+msgstr ""
+
+#: .\apps\security\forms.py:29 .\apps\security\forms.py:114
+#: .\apps\security\forms.py:441
+msgid "It is required to confirm the password"
+msgstr ""
+
+#: .\apps\security\forms.py:34 .\apps\security\forms.py:119
+#: .\apps\security\forms.py:446
+msgid "confirm password"
+msgstr ""
+
+#: .\apps\security\forms.py:44 .\apps\security\forms.py:130
+#: .\apps\security\forms.py:464
+msgid "The password entered does not match the previous one"
+msgstr ""
+
+#: .\apps\security\forms.py:52 .\apps\security\forms.py:154
+#: .\apps\security\forms.py:291 .\apps\security\forms.py:472
+msgid "User:"
+msgstr ""
+
+#: .\apps\security\forms.py:53 .\apps\security\forms.py:155
+#: .\apps\security\forms.py:292
+msgid "Name:"
+msgstr ""
+
+#: .\apps\security\forms.py:54 .\apps\security\forms.py:156
+#: .\apps\security\forms.py:293
+msgid "Last name:"
+msgstr ""
+
+#: .\apps\security\forms.py:55 .\apps\security\forms.py:157
+#: .\apps\security\forms.py:294
+msgid "Email:"
+msgstr ""
+
+#: .\apps\security\forms.py:61 .\apps\security\forms.py:189
+#: .\apps\security\forms.py:326 .\apps\security\forms.py:486
+msgid "user"
+msgstr ""
+
+#: .\apps\security\forms.py:71 .\apps\security\forms.py:199
+#: .\apps\security\forms.py:336
+msgid "name"
+msgstr ""
+
+#: .\apps\security\forms.py:79 .\apps\security\forms.py:207
+#: .\apps\security\forms.py:344
+msgid "last name"
+msgstr ""
+
+#: .\apps\security\forms.py:87 .\apps\security\forms.py:215
+#: .\apps\security\forms.py:352
+msgid "email"
+msgstr ""
+
+#: .\apps\security\forms.py:145 .\apps\security\forms.py:282
+msgid "The ID card entered is contained by at least one other record"
+msgstr ""
+
+#: .\apps\security\forms.py:158 .\apps\security\forms.py:295
+msgid "ID card:"
+msgstr ""
+
+#: .\apps\security\forms.py:159 .\apps\security\forms.py:296
+msgid "Sexual gender:"
+msgstr ""
+
+#: .\apps\security\forms.py:160 .\apps\security\forms.py:297
+msgid "Image:"
+msgstr ""
+
+#: .\apps\security\forms.py:161 .\apps\security\forms.py:298
+msgid "Address:"
+msgstr ""
+
+#: .\apps\security\forms.py:162 .\apps\security\forms.py:299
+msgid "Landline:"
+msgstr ""
+
+#: .\apps\security\forms.py:163 .\apps\security\forms.py:300
+msgid "Mobile phone:"
+msgstr ""
+
+#: .\apps\security\forms.py:166 .\apps\security\forms.py:303
+#: .\apps\security\forms.py:475
+msgid "Enter a user using letters, digits and @/./+/-/_"
+msgstr ""
+
+#: .\apps\security\forms.py:167 .\apps\security\forms.py:304
+msgid "Enter a name of maximum length 30 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:168 .\apps\security\forms.py:305
+msgid "Enter a surname of maximum length 150 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:169 .\apps\security\forms.py:306
+msgid "Enter a email of maximum length 254 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:170 .\apps\security\forms.py:307
+msgid "Enter a ID card of maximum length 11 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:171 .\apps\security\forms.py:308
+msgid "Select the gender associated with the user"
+msgstr ""
+
+#: .\apps\security\forms.py:172 .\apps\security\forms.py:309
+msgid "Select an image associated with the user"
+msgstr ""
+
+#: .\apps\security\forms.py:173 .\apps\security\forms.py:310
+msgid "Enter an address of maximum length 150 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:174 .\apps\security\forms.py:311
+msgid "Enter a landline of maximum length 50 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:175 .\apps\security\forms.py:312
+msgid "Enter a mobile phone of maximum length 50 characters"
+msgstr ""
+
+#: .\apps\security\forms.py:179 .\apps\security\forms.py:316
+#: .\apps\security\forms.py:479
+msgid "It is required to enter a user"
+msgstr ""
+
+#: .\apps\security\forms.py:182 .\apps\security\forms.py:319
+msgid "It is required to enter an ID card"
+msgstr ""
+
+#: .\apps\security\forms.py:223 .\apps\security\forms.py:360
+#: .\apps\security\models.py:13
+msgid "ID card"
+msgstr ""
+
+#: .\apps\security\forms.py:246 .\apps\security\forms.py:383
+msgid "address"
+msgstr ""
+
+#: .\apps\security\forms.py:254 .\apps\security\forms.py:391
+msgid "landline"
+msgstr ""
+
+#: .\apps\security\forms.py:262 .\apps\security\forms.py:399
+msgid "mobile phone"
+msgstr ""
+
+#: .\apps\security\forms.py:411
+msgid "It is required to enter the current password"
+msgstr ""
+
+#: .\apps\security\forms.py:416
+msgid "current password"
+msgstr ""
+
+#: .\apps\security\forms.py:426
+msgid "It is required enter the new password"
+msgstr ""
+
+#: .\apps\security\forms.py:431
+msgid "new password"
+msgstr ""
+
+#: .\apps\security\forms.py:457
+msgid "The password entered does not match the current one"
+msgstr ""
+
+#: .\apps\security\models.py:14
+msgid "Image"
+msgstr ""
+
+#: .\apps\security\models.py:15
+msgid "Gender"
+msgstr ""
+
+#: .\apps\security\models.py:16
+msgid "Address"
+msgstr ""
+
+#: .\apps\security\models.py:17
+msgid "Landline"
+msgstr ""
+
+#: .\apps\security\models.py:18
+msgid "Mobile phone"
+msgstr ""
+
+#: .\apps\security\models.py:26
+msgid "User"
+msgstr ""
+
+#: .\apps\security\models.py:27
+msgid "Users"
+msgstr ""
+
+#: .\apps\security\models.py:51
+msgid "Action"
+msgstr ""
+
+#: .\apps\security\models.py:52
+msgid "Access"
+msgstr ""
+
+#: .\apps\security\models.py:53
+msgid "Date-Time"
+msgstr ""
+
+#: .\apps\security\models.py:54
+msgid "Comment"
+msgstr ""
+
+#: .\apps\security\models.py:58 .\apps\security\views.py:260
+msgid "Audit"
+msgstr ""
+
+#: .\apps\security\models.py:59
+msgid "Audits"
+msgstr ""
+
+#: .\apps\security\views.py:25
+msgid "403 Error"
+msgstr ""
+
+#: .\apps\security\views.py:47
+msgid "The username or password is incorrect"
+msgstr ""
+
+#: .\apps\security\views.py:50
+msgid "Login"
+msgstr ""
+
+#: .\apps\security\views.py:69
+#, python-format
+msgid "The %(username)s user account was created successfully"
+msgstr ""
+
+#: .\apps\security\views.py:75
+msgid "Register"
+msgstr ""
+
+#: .\apps\security\views.py:101
+msgid "Profile"
+msgstr ""
+
+#: .\apps\security\views.py:193
+msgid "Password reset"
+msgstr ""
+
+#: .\apps\security\views.py:209
+msgid "Password successfully reset"
+msgstr ""

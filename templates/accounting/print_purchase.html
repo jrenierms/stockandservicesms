@@ -1,0 +1,92 @@
+{% load i18n %}
+{% load static %}
+
+<!DOCTYPE html>
+
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<style>
+    .img-purchase {
+        width: 50px;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .head {
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    #purchase thead tr th {
+        text-align: left;
+        border-bottom: 1px solid black;
+        border-top: 1px solid black;
+        padding-top: 4px;
+    }
+
+    #purchase thead tr {
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    #purchase tbody tr {
+        padding: 0;
+    }
+
+    .prove {
+        text-transform: uppercase;
+    }
+</style>
+<body>
+<img src="{{ setting.get_image }}" class="img-purchase">
+<p class="head">
+    {{ setting.company_description|upper }}<br>
+    {{ setting.company_code }}<br>
+    {{ setting.company_address|upper }}
+</p>
+<p>
+    <b>{% trans 'Purchase:' %}</b> {{ summary.document }}<br>
+    <b>{% trans 'Date:' %}</b> {{ summary.date }}<br>
+    <b>{% trans 'Supplier:' %}</b> {{ summary.supplier.description|upper }}<br>
+</p>
+<table id="purchase">
+    <thead>
+        <tr>
+            <th style="width: 40%;">{% trans 'Product' %}</th>
+            <th style="width: 15%;">{% trans 'Measurement' %}</th>
+            <th style="width: 15%; text-align: right;">{% trans 'Quantity' %}</th>
+            <th style="width: 15%; text-align: right;">{% trans 'Cost Price' %}</th>
+            <th style="width: 15%; text-align: right;">{% trans 'Total' %}</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for d in detail %}
+            <tr {% if forloop.first %}style="padding-top: 3px;" {% endif %}>
+                <td>{{ d.product_conversion.product.description }}</td>
+                <td>{{ d.product_conversion.measurement.description }}</td>
+                <td style="text-align: right">{{ d.quantity }}</td>
+                <td style="text-align: right">{{ d.cost_price }}</td>
+                <td style="text-align: right">{{ d.subtotal }}</td>
+            </tr>
+        {% endfor %}
+        <tr style="border-top: 1px solid black; padding-top: 2px;">
+            <td colspan="4"><b>Total</b></td>
+            <td style="text-align: right"><b>{{ summary.total }}</b></td>
+        </tr>
+    </tbody>
+</table>
+<p class="prove">
+    <b>{% trans 'Supplier:' %}</b> {{ summary.supplier.description|upper }}<br>
+</p>
+<table>
+    <thead>
+    <tr>
+        <th>STOCK AND SERVICES MANAGER SYSTEM</th>
+    </tr>
+    <tr>
+        <th>IT CLINIC SOLUTIONS CORP</th>
+    </tr>
+    </thead>
+</table>
+</body>
+</html>

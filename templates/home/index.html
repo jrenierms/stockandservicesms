@@ -1,0 +1,433 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load static %}
+
+{% block main_content %}
+    <div class="row">
+      <div class="col-md-8">
+        <!-- LINE CHART -->
+        <div class="card card-yellow">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'Line Chart - Daily Sales - Year:' %} {% now 'Y' %} {% trans ' - Month:' %} {% now 'm' %}</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart">
+              <canvas id="lineChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col (LEFT) -->
+
+      <div class="col-md-4">
+        <!-- BAR CHART -->
+        <div class="card card-lightblue">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'Bar Chart - Monthly Sales - Year:' %} {% now 'Y' %}</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart">
+              <canvas id="barChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col (RIGHT) -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-md-12">
+        <!-- STACKED BAR CHART -->
+        <div class="card card-orange">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'Stacked Bar Chart - Monthly Sales - Year:' %} {% now 'Y' %}</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="chart">
+              <canvas id="stackedBarChart" style="min-height: 500px; height: 500px; max-height: 500px; max-width: 100%;"></canvas>
+            </div>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col (LEFT) -->
+    </div>
+    <!-- /.row -->
+
+    <div class="row">
+      <div class="col-md-6">
+        <!-- DONUT CHART -->
+        <div class="card card-blue">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'Donut Chart - Top 10 Products by Sales - Year:' %} {% now 'Y' %}</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col (LEFT) -->
+
+      <div class="col-md-6">
+        <!-- PIE CHART -->
+        <div class="card card-red">
+          <div class="card-header">
+            <h3 class="card-title">{% trans 'Pie Chart - Top 10 Products by Profit - Year:' %} {% now 'Y' %}</h3>
+
+            <div class="card-tools">
+              <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                <i class="fas fa-minus"></i>
+              </button>
+              <button type="button" class="btn btn-tool" data-card-widget="remove">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <canvas id="pieChart1" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+          </div>
+          <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col (RIGHT) -->
+    </div>
+    <!-- /.row -->
+
+{% endblock main_content %}
+
+{% block javascript %}
+<script>
+
+    /* ChartJS
+     * -------
+     * Here we will create a few charts using ChartJS
+     */
+
+    //-------------
+    //- LINE CHART -
+    //--------------
+    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+    var lineChartData = {
+      labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+          'November', 'December'],
+      datasets: [
+        {
+          label               : 'Dataset 1',
+          backgroundColor     : 'rgba(251,153,2,1)',
+          borderColor         : 'rgba(251,153,2,1)',
+          data                : [28, 48, 40, 19, 86, 27, 90, 45, 88, 60, 77, 39],
+          fill: false,
+        },
+        {
+          label               : 'Dataset 2',
+          backgroundColor     : 'rgba(52,124,152,1)',
+          borderColor         : 'rgba(52,124,152,1)',
+          data                : [65, 59, 80, 81, 56, 55, 40, 87, 68, 49, 56, 77],
+          fill: false,
+        },
+      ]
+    }
+
+    lineChartOptions = {
+        datasetFill: false,
+        responsive: true,
+        title: {
+            display: false,
+            text: 'Chart.js Line Chart'
+        },
+        tooltips: {
+            mode: 'index',
+            intersect: false,
+        },
+        hover: {
+            mode: 'nearest',
+            intersect: true
+        },
+        scales: {
+            xAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: false,
+                    labelString: 'Month'
+                }
+            }],
+            yAxes: [{
+                display: true,
+                scaleLabel: {
+                    display: false,
+                    labelString: 'Value'
+                }
+            }]
+        }
+    }
+
+    //-------------
+    //- DONUT CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+    var donutData = {
+      labels: [
+          'Item 1',
+          'Item 2',
+          'Item 3',
+          'Item 4',
+          'Item 5',
+          'Item 6',
+      ],
+      datasets: [
+        {
+          data: [100,100,100,100,100,100],
+          backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+        }
+      ]
+    }
+    var donutOptions = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+          position: 'right',
+      },
+    }
+
+    //-------------
+    //- PIE CHART -
+    //-------------
+    // Get context with jQuery - using jQuery's .get() method.
+    var pieChartCanvas = $('#pieChart1').get(0).getContext('2d')
+    var pieData = donutData;
+    var pieOptions = {
+      maintainAspectRatio: false,
+      responsive: true,
+      legend: {
+          position: 'right',
+      },
+    }
+
+    //-------------
+    //- BAR CHART -
+    //-------------
+    var barChartCanvas = $('#barChart').get(0).getContext('2d')
+    var barChartData = {
+        labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October',
+            'November', 'December'],
+        datasets: [{
+            label: 'Dataset 1',
+            backgroundColor: 'rgba(251,153,2,1)',
+            borderColor: 'rgba(251,153,2,1)',
+            borderWidth: 1,
+            data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        }, {
+            label: 'Dataset 2',
+            backgroundColor: 'rgba(52,124,152,1)',
+            borderColor: 'rgba(52,124,152,1)',
+            borderWidth: 1,
+            data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+        }]
+    };
+
+    var barChartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      datasetFill: false
+    }
+
+
+
+    //---------------------
+    //- STACKED BAR CHART -
+    //---------------------
+    var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
+    var stackedBarChartData = $.extend(true, {}, barChartData)
+
+    var stackedBarChartOptions = {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        xAxes: [{
+          stacked: true,
+        }],
+        yAxes: [{
+          stacked: true
+        }]
+      }
+    }
+
+    function get_daily_sales() {
+        $.ajax({
+            type: 'POST',
+            url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+            dataType: 'json',
+            data: {
+                'action': 'daily_sales'
+            },
+        }).done(function (data) {
+            if (data.status == 'ok') {
+                for (i = 0; i < data.lineChartData.datasets.length; i++) {
+                    data.lineChartData.datasets[i].fill = false;
+                }
+
+                lineChartData = data.lineChartData;
+                var lineChart = new Chart(lineChartCanvas, {
+                    type: 'line',
+                    data: lineChartData,
+                    options: lineChartOptions
+                })
+
+                return false;
+            }
+            show_messages(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus + ': ' + errorThrown);
+        }).always(function (data) {
+
+        });
+    }
+
+    function get_monthly_sales() {
+        $.ajax({
+            type: 'POST',
+            url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+            dataType: 'json',
+            data: {
+                'action': 'monthly_sales'
+            },
+        }).done(function (data) {
+            if (data.status == 'ok') {
+                barChartData = data.barChartData;
+                var barChart = new Chart(barChartCanvas, {
+                    type: 'horizontalBar',
+                    data: barChartData,
+                    options: barChartOptions
+                })
+
+                var stackedBarChartData = $.extend(true, {}, barChartData)
+                var stackedBarChart = new Chart(stackedBarChartCanvas, {
+                    type: 'bar',
+                    data: stackedBarChartData,
+                    options: stackedBarChartOptions
+                })
+
+                return false;
+            }
+            show_messages(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus + ': ' + errorThrown);
+        }).always(function (data) {
+
+        });
+    }
+
+    function get_product_sales() {
+        $.ajax({
+            type: 'POST',
+            url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+            dataType: 'json',
+            data: {
+                'action': 'product_sales'
+            },
+        }).done(function (data) {
+            if (data.status == 'ok') {
+                donutData = data.donutData;
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                var donutChart = new Chart(donutChartCanvas, {
+                    type: 'doughnut',
+                    data: donutData,
+                    options: donutOptions
+                })
+
+                return false;
+            }
+            show_messages(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus + ': ' + errorThrown);
+        }).always(function (data) {
+
+        });
+    }
+
+    function get_product_profit() {
+        $.ajax({
+            type: 'POST',
+            url: '/{{ LANGUAGE_CODE }}{{ view_url }}',
+            dataType: 'json',
+            data: {
+                'action': 'product_profit'
+            },
+        }).done(function (data) {
+            if (data.status == 'ok') {
+                var pieData = data.pieData;
+                //Create pie or douhnut chart
+                // You can switch between pie and douhnut using the method below.
+                var pieChart = new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData,
+                    options: pieOptions
+                })
+
+                return false;
+            }
+            show_messages(data);
+        }).fail(function (jqXHR, textStatus, errorThrown) {
+            alert(textStatus + ': ' + errorThrown);
+        }).always(function (data) {
+
+        });
+    }
+
+    $(document).ready(function () {
+
+        get_daily_sales()
+        get_monthly_sales();
+        get_product_sales();
+        get_product_profit();
+
+    })
+</script>
+{% endblock javascript %}

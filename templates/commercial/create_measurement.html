@@ -1,0 +1,63 @@
+{% extends 'base/base.html' %}
+{% load i18n %}
+{% load widget_tweaks %}
+
+{% block main_content %}
+    <div id="main_content_row" class="row">
+      <div id="main_content_col" class="col-12">
+        <div class="card card-outline card-primary">
+          <form id="formItem" method="post" role="form">
+            <div class="card-header">
+              <div class="row">
+                <div class="col-sm-12 col-md-7" style="margin: auto;">
+                  {% if 'create' in view_url %}
+                    <h3 class="card-title"><i class="fas fa-plus"></i> {% trans 'New measurement' %}</h3>
+                  {% elif 'edit' in view_url %}
+                    <h3 class="card-title"><i class="fas fa-edit"></i> {% trans 'Edit measurement' %}</h3>
+                  {% endif %}
+                </div>
+                <div class="col-sm-12 col-md-5" align="right" style="margin:auto;">
+                    {% comment %}Boton superior-derecho{% endcomment %}
+                </div>
+              </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+              {% csrf_token %}
+              <div id="div-{{ form.code.id_for_label }}" class="form-group fieldWrapper">
+                <label class="col-form-label" for={{ form.code.id_for_label }}>{{ form.code.label }}</label>
+                {{ form.code|add_error_class:"is-invalid" }}
+              </div>
+              <div id="div-{{ form.description.id_for_label }}" class="form-group fieldWrapper">
+                <label class="col-form-label" for={{ form.description.id_for_label }}>{{ form.description.label }}</label>
+                {{ form.description|add_error_class:"is-invalid" }}
+              </div>
+            </div>
+            <!-- /.card-body -->
+            <div class="card-footer">
+              <a class="btn btn-default" href="{{ list_url }}">
+                  <i class="fas fa-reply"></i> {% trans 'To return' %}
+              </a>
+              <button type="button" class="btn btn-primary" onclick="save()">
+                  <i class="far fa-save"></i> {% trans 'Save' %}
+              </button>
+            </div>
+              <div class="row">
+                {% if messages_group %}
+                  <ul class="messages">
+                    {% for message in messages_group %}
+                      <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              </div>
+            <!-- /.card-footer -->
+          </form>
+        </div>
+        <!-- /.card -->
+      </div>
+      <!-- /.col -->
+    </div>
+    <!-- /.row -->
+
+{% endblock main_content %}

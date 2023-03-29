@@ -1,0 +1,291 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-02-18 14:24-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\apps\base\choices.py:5
+msgid "Male"
+msgstr "Masculino"
+
+#: .\apps\base\choices.py:6
+msgid "Female"
+msgstr "Femenino"
+
+#: .\apps\base\choices.py:11
+msgid "Create"
+msgstr "Crear"
+
+#: .\apps\base\choices.py:12
+msgid "List"
+msgstr "Listar"
+
+#: .\apps\base\choices.py:13 .\apps\base\texts.py:38
+msgid "Edit"
+msgstr "Editar"
+
+#: .\apps\base\choices.py:14 .\apps\base\texts.py:39
+msgid "Delete"
+msgstr "Eliminar"
+
+#: .\apps\base\choices.py:15 .\apps\base\texts.py:40
+msgid "Print"
+msgstr "Imprimir"
+
+#: .\apps\base\choices.py:16
+msgid "Consult"
+msgstr "Consultar"
+
+#: .\apps\base\models.py:8
+msgid "Id"
+msgstr "Id"
+
+#: .\apps\base\models.py:9
+msgid "Active"
+msgstr "Activo"
+
+#: .\apps\base\models.py:10
+msgid "Created date"
+msgstr "Fecha de creación"
+
+#: .\apps\base\models.py:11 .\apps\base\models.py:12
+msgid "Edited date"
+msgstr "Fecha de edición"
+
+#: .\apps\base\texts.py:5
+msgid "Processing..."
+msgstr "Procesando..."
+
+#: .\apps\base\texts.py:6
+msgid "Search:"
+msgstr "Buscar:"
+
+#: .\apps\base\texts.py:7
+msgid "Show _MENU_ entries"
+msgstr "Mostrar _MENU_ registros"
+
+#: .\apps\base\texts.py:8
+msgid "Showing _START_ to _END_ of _TOTAL_ entries"
+msgstr "Mostrando del _START_ al _END_ de _TOTAL_ registros"
+
+#: .\apps\base\texts.py:9
+msgid "Showing 0 to 0 of 0 entries"
+msgstr "Mostrando del 0 al 0 de 0 registros"
+
+#: .\apps\base\texts.py:10
+msgid "(filtered from _MAX_ total entries)"
+msgstr "(filtrado de un total de _MAX_ registros)"
+
+#: .\apps\base\texts.py:12
+msgid "Loading..."
+msgstr "Cargando..."
+
+#: .\apps\base\texts.py:13
+msgid "No matching records found"
+msgstr "No se encontraron registros que coincidieran"
+
+#: .\apps\base\texts.py:14
+msgid "No data available in table"
+msgstr "Ningún dato disponible en la tabla"
+
+#: .\apps\base\texts.py:16
+msgid "First"
+msgstr "Primero"
+
+#: .\apps\base\texts.py:17
+msgid "Previous"
+msgstr "Anterior"
+
+#: .\apps\base\texts.py:18
+msgid "Next"
+msgstr "Siguiente"
+
+#: .\apps\base\texts.py:19
+msgid "Last"
+msgstr "Último"
+
+#: .\apps\base\texts.py:22
+msgid ": activate to sort column ascending"
+msgstr ": activar para ordenar la columna de manera ascendente"
+
+#: .\apps\base\texts.py:23
+msgid ": activate to sort column descending"
+msgstr ": activar para ordenar la columna de manera descendente"
+
+#: .\apps\base\texts.py:29
+msgid "Are you sure you want to save the information?"
+msgstr "¿Está seguro querer guardar la información?"
+
+#: .\apps\base\texts.py:30
+msgid "You will not be able to undo the action after it is done!"
+msgstr "¡No podrá deshacer la acción una vez realizada!"
+
+#: .\apps\base\texts.py:31
+msgid "Yes, save"
+msgstr "Sí, guardar"
+
+#: .\apps\base\texts.py:32
+msgid "No, cancel"
+msgstr "No, cancelar"
+
+#: .\apps\base\texts.py:33
+msgid "Are you sure you want to delete the record?"
+msgstr "¿Está seguro querer eliminar el registro?"
+
+#: .\apps\base\texts.py:34
+msgid "Yes, delete"
+msgstr "Sí, eliminar"
+
+#: .\apps\base\texts.py:35
+msgid "Apply"
+msgstr "Aplicar"
+
+#: .\apps\base\texts.py:36
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: .\apps\base\texts.py:41
+msgid "Are you sure you want to delete the product?"
+msgstr "¿Está seguro querer eliminar el producto?"
+
+#: .\apps\base\texts.py:47
+msgid "Record successfully saved"
+msgstr "Registro guardado satisfactoriamente"
+
+#: .\apps\base\texts.py:48
+msgid "Record successfully deleted"
+msgstr "Registro eliminado satisfactoriamente"
+
+#: .\apps\base\texts.py:49
+msgid "Transaction successfully saved"
+msgstr "Transacción guardada satisfactoriamente"
+
+#: .\apps\base\texts.py:52
+msgid "Error encountered during validation"
+msgstr "Error encontrado durante la validación"
+
+#: .\apps\base\texts.py:53
+msgid "Record deletion failed"
+msgstr "La eliminación del registro falló"
+
+#: .\apps\base\texts.py:54
+msgid "Record edition failed"
+msgstr "La edición del registro falló"
+
+#: .\apps\base\texts.py:55
+msgid "Transaction save failed"
+msgstr "El guardado de la transacción falló"
+
+#: .\apps\base\texts.py:56
+msgid "Information load failed"
+msgstr "La carga de la información falló"
+
+#: .\apps\base\texts.py:59
+msgid "Please check the data entered"
+msgstr "Por favor revise los datos introducidos"
+
+#: .\apps\base\texts.py:60
+msgid "Record not found"
+msgstr "Registro no encontrado"
+
+#: .\apps\base\texts.py:61
+msgid "Record related to other data"
+msgstr "Registro relacionado con otros datos"
+
+#: .\apps\base\texts.py:62
+msgid "Product measurement related to other data"
+msgstr "Medida de producto relacionada con otros datos"
+
+#: .\apps\base\texts.py:63
+msgid "Product is already added"
+msgstr "El producto ya está agregado"
+
+#: .\apps\base\texts.py:64
+msgid "No product has been added"
+msgstr "Ningún producto ha sido agregado"
+
+#: .\apps\base\texts.py:65
+msgid "Wrong quantities and/or prices entered"
+msgstr "Cantidades y/o precios introducidos incorrectos"
+
+#: .\apps\base\texts.py:66
+msgid "Wrong prices entered"
+msgstr "Precios introducidos incorrectos"
+
+#: .\apps\base\texts.py:67
+msgid "There is one or more products without a location"
+msgstr "Existe uno o más productos sin ubicación"
+
+#: .\apps\base\texts.py:68
+msgid "There are quantities greater than available"
+msgstr "Existen cantidades superiores a la disponible"
+
+#: .\apps\base\texts.py:74
+msgid "January"
+msgstr "Enero"
+
+#: .\apps\base\texts.py:75
+msgid "February"
+msgstr "Febrero"
+
+#: .\apps\base\texts.py:76
+msgid "March"
+msgstr "Marzo"
+
+#: .\apps\base\texts.py:77
+msgid "April"
+msgstr "Abril"
+
+#: .\apps\base\texts.py:78
+msgid "May"
+msgstr "Mayo"
+
+#: .\apps\base\texts.py:79
+msgid "June"
+msgstr "Junio"
+
+#: .\apps\base\texts.py:80
+msgid "July"
+msgstr "Julio"
+
+#: .\apps\base\texts.py:81
+msgid "August"
+msgstr "Agosto"
+
+#: .\apps\base\texts.py:82
+msgid "September"
+msgstr "Septiembre"
+
+#: .\apps\base\texts.py:83
+msgid "October"
+msgstr "Octubre"
+
+#: .\apps\base\texts.py:84
+msgid "November"
+msgstr "Noviembre"
+
+#: .\apps\base\texts.py:85
+msgid "December"
+msgstr "Diciembre"
+
+#: .\apps\base\utils.py:25 .\apps\base\utils.py:28 .\apps\base\utils.py:29
+msgid "Anonymous"
+msgstr "Anónimo"
+
+#: .\apps\base\utils.py:540
+msgid "Cost price: "
+msgstr "Precio costo: "
